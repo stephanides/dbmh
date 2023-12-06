@@ -1,0 +1,348 @@
+// RESET
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  background-color: #1a1a1a !important;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* TYPOGRAPHY */
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.375rem;
+}
+
+h4 {
+  font-size: 1.125rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.875rem;
+}
+
+.font-light {
+  font-weight: 300;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-heavy {
+  font-weight: 700;
+}
+
+/* POSITIONING */
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.justify {
+  text-align: justify;
+}
+
+strong {
+  font-weight: 700;
+}
+
+// GLOBAL
+
+* {
+  font-family: 'Nunito Sans', sans-serif;
+}
+#__next {
+  position: relative;
+  width: 100%;
+}
+
+.custom-bullet-container,
+.swiper-pagination-bullet,
+.swiper-pagination-bullet-active {
+  border-radius: 0;
+  margin-right: 8px;
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  opacity: 1;
+  transition: all 0.3s ease-out;
+  border-radius: 50%;
+}
+.swiper-pagination-bullet {
+  background: #707070;
+}
+.swiper-pagination-bullet-active {
+  background: white;
+  transform: scale(1.2);
+}
+
+.grecaptcha-badge {
+  display: none;
+}
+
+.active-nav-link {
+  color: #1c6bba !important;
+  -webkit-text-stroke: 0.5px #1c6bba;
+}
+
+.z-index-1 {
+  z-index: 1;
+}
+.z-index-2 {
+  z-index: 2;
+}
+.z-index-3 {
+  z-index: 3;
+}
+.z-index-4 {
+  z-index: 4;
+}
+
+.chakra-checkbox__control {
+  background: white !important;
+  border: 1px solid #e0e0e0 !important;
+  width: 15px !important;
+  height: 15px !important;
+}
+
+.chakra-checkbox__control[data-checked] {
+  svg {
+    stroke: #1c6bba !important;
+  }
+}
+
+.chakra-checkbox__label {
+  font-family: 'PPFormula-Extrabold';
+  font-size: 16px;
+  line-height: 16px;
+  color: white;
+}
+
+a:hover,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.swiper-pagination-progressbar-fill {
+  background-color: #1c6bba !important;
+}
+
+// Pagination
+
+.pagination-container {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-previous,
+.pagination-next {
+  background-color: #1c6bba;
+  color: white;
+  padding: 6px 12px;
+  margin: 0 12px;
+  &:hover {
+    a {
+      color: white;
+    }
+  }
+}
+
+.pagination-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-link,
+.pagination-active-link {
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  color: #1c6bba;
+  width: 26px;
+  min-width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 4px;
+  &:hover {
+    color: #1c6bba;
+  }
+}
+
+.pagination-active-link {
+  background-color: #1c6bba;
+  color: white;
+  &:hover {
+    color: white;
+  }
+}
+
+.animated-heading-left {
+  /* Define initial styles */
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 1s, transform 1s;
+}
+
+.animated-heading-left.visible {
+  /* Define styles when the div is visible */
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animated-heading-right {
+  /* Define initial styles */
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.animated-heading-right.visible {
+  /* Define styles when the div is visible */
+  opacity: 1;
+  transform: translateX(0);
+}

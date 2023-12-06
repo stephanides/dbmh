@@ -1,0 +1,19 @@
+{
+  "title": "Contact",
+  "main_title": "<strong>Are you interested</strong><br /> in our services ?",
+  "form_title": "Contact form",
+  "form_name": "Name and Surname or company",
+  "form_phone": "Phone",
+  "form_date_from": "Shipping date from",
+  "form_date_to": "Shipping date to",
+  "form_passengers": "Number of persons",
+  "form_message": "Message",
+  "date_from": "Date from",
+  "date_to": "Date to",
+  "time_from": "Time",
+  "time_to": "Time",
+  "passengers": "Passengers",
+  "form_info": "* above, you agree that the company FERMO, s.r.o. will process personal data specifically for the purpose of fulfilling your request. More informations",
+  "form_terms": "privacy",
+  "gdpr_agreements": "I agree to the processing of personal data*"
+}

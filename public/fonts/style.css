@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'PPFormula-Extrabold';
+  src: url('./PPFormula-Extrabold.otf');
+  font-display: swap;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: 'PPFormula-Medium';
+  src: url('./PPFormula-Medium.otf');
+  font-display: swap;
+  font-style: medium;
+}
+
+@font-face {
+  font-family: 'PPFormula-Regular';
+  src: url('./PPFormula-Regular.otf');
+  font-display: swap;
+  font-style: normal;
+}
