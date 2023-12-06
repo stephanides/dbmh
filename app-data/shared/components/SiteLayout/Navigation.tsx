@@ -216,6 +216,7 @@ const StyledHeadingText = styled(Text)`
 
 const MenuItem = styled(Text)`
   font-family: ${FONT_FAMILY_MONO.REGULAR};
+  text-transform: uppercase;
   font-weight: 700;
   font-size: ${rem(64)};
   color: white;

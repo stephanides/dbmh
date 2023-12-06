@@ -58,7 +58,7 @@ export const PodcastSlide = ({ podcast, activeSlide }: PodcastSlideProps) => {
         />
         <Box display="none">
           <audio ref={audioRef} controls muted>
-            <source src="/podcasts/buzzworld.mp3" type="audio/mp3" />
+            <source src={podcast.podcast_example} type="audio/mp3" />
             Your browser does not support the audio tag.
           </audio>
         </Box>
