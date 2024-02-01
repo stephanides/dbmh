@@ -6,7 +6,7 @@ import styled, { css, keyframes } from 'styled-components';
 import { CarouselPaginationDot } from './PaginationDot';
 import { rem } from 'polished';
 import { useTranslation } from 'react-i18next';
-import { FONT_FAMILY_FORMULA } from '../../../../shared/design';
+import { FONT_FAMILY_FORMULA, media } from '../../../../shared/design';
 import { ReferenceLabel } from './ReferenceLabel';
 
 SwiperCore.use([Pagination, EffectFade]);
@@ -38,7 +38,7 @@ export const ReferencesItem = ({
   const { i18n } = useTranslation();
   const lang = i18n.language ?? 'en';
   return (
-    <Box width="100%" style={{ aspectRatio: 1920 / 1080 }}>
+    <Wrapper width="100%">
       <Swiper
         observer
         tag={SwiperWrapper}
@@ -71,6 +71,7 @@ export const ReferencesItem = ({
               height="100%"
               backgroundImage={`url(${image.src})`}
               backgroundPosition="center"
+              backgroundSize="cover"
               backgroundRepeat="no-repeat"
               position="relative"
             >
@@ -85,8 +86,10 @@ export const ReferencesItem = ({
         ))}
         <Box
           position="absolute"
-          bottom={'100px'}
-          ml={rem(222)}
+          bottom={{ base: 'unset', md: rem(40), xl: '100px' }}
+          top={{ base: rem(64), md: 'unset' }}
+          pl={{ base: rem(32), lg: rem(60), xl: rem(140), '3xl': rem(222) }}
+          pr={{ base: rem(32), lg: 0 }}
           maxWidth={rem(720)}
           width="100%"
         >
@@ -104,8 +107,8 @@ export const ReferencesItem = ({
             />
             <Text
               fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-              fontSize={rem(72)}
-              lineHeight={rem(82)}
+              fontSize={{ base: rem(40), xl: rem(72) }}
+              lineHeight={{ base: rem(46), xl: rem(82) }}
               color="white"
               mt={rem(72)}
             >
@@ -129,7 +132,7 @@ export const ReferencesItem = ({
           </Controls>
         </Box>
       </Swiper>
-    </Box>
+    </Wrapper>
   );
 };
 
@@ -153,4 +156,14 @@ const PaginationWrapper = styled.div`
   position: relative;
   display: flex;
   column-gap: 8px;
+`;
+
+const Wrapper = styled(Box)`
+  aspect-ratio: 1920 / 1080;
+  ${media.down.lg} {
+    aspect-ratio: 768 / 532;
+  }
+  ${media.down.md} {
+    aspect-ratio: 360 / 660;
+  }
 `;

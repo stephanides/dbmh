@@ -24,6 +24,9 @@ import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { AppProps } from 'next/app';
 import { OnlyClientProvider } from '../app-data/shared/hooks/useOnlyClient';
 
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 // 2. Call `extendTheme` and pass your custom values
 const theme = extendTheme({
   breakpoints: {
@@ -49,10 +52,8 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>DayByMeMediaHouse</title>
         <link rel="icon" href="/favicon.ico" />
         <link href="/fonts/style.css" rel="stylesheet" />
-        <meta name="description" content="" />
         {/* Use minimum-scale=1 to enable GPU rasterization */}
         <meta
           name="viewport"

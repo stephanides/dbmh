@@ -13,35 +13,36 @@ import { OtherNumbersCarousel } from './OtherNumbersCarousel';
 
 const SLIDES_1 = [
   {
-    number: 10,
-    numberSufix: 'Mil.',
-    text: {
-      en: 'označení hashtagov.',
-      sk: 'označení hashtagov.',
-    },
-  },
-  {
     number: 1,
-    numberSufix: 'Mil.',
+    numberSufix: {
+      en: 'Mil+ followers',
+      sk: 'Mil+ sledovateľov',
+    },
     text: {
-      en: 'followers.',
-      sk: 'sledovateľov.',
+      en: `With brands Dnes nosím, Dnes jem a Dnes cestujem, we've created trend that's been followed by almost 1 million people cumulatively.`,
+      sk: 'Značkami Dnes nosím, Dnes jem a Dnes cestujem sme vytvorili trend, ktorý dodnes na FB a IG kumulatívne sleduje viac ako 1 milión ľudí.',
     },
   },
   {
-    number: 75,
-    numberSufix: 'K',
+    number: 10,
+    numberSufix: {
+      en: 'Mil+ tags',
+      sk: 'Mil+ označení',
+    },
     text: {
-      en: 'registrations.',
-      sk: 'registrácií',
+      en: `Hashtags #dnesnosim, #dnesjem, #dnescestujem and others that we've created and protected with trademarks, have over 10 million of tags on social media.`,
+      sk: 'Hashtagy #dnesnosim, #dnesjem, #dnescestujem a ďalšie, ktoré sme vymysleli a ktoré si chránime ochrannou známkou, evidujú viac ako 10 miliónov označení.',
     },
   },
   {
-    number: 400,
-    numberSufix: 'K',
+    number: 600,
+    numberSufix: {
+      en: 'K+ UGC on Daybyme.com',
+      sk: 'Tis+ fotiek na Daybyme.com',
+    },
     text: {
-      en: 'uploaded photos.',
-      sk: 'nahratých fotografií.',
+      en: `More than 600 thousand photos were uploaded by users to our lifestyle network Daybyme.com.`,
+      sk: 'Na lifestyle sieť Daybyme.com bolo používateľmi nahratých viac ako 600 tisíc fotografií.',
     },
   },
 ];
@@ -49,83 +50,123 @@ const SLIDES_1 = [
 const SLIDES_2 = [
   {
     number: 250,
-    numberSufix: '+',
+    numberSufix: {
+      en: '+ influencers',
+      sk: '+ influencers',
+    },
     text: {
-      en: 'influencers monthly.',
-      sk: 'influencerov mesačne.',
+      en: `On average, we involve more than 250 influencers in our clients' campaigns every month.`,
+      sk: 'Do kampaní našich klientov v priemere mesačne zapájame viac ako 250 influencerov.',
     },
   },
   {
-    number: 75,
-    numberSufix: 'K',
+    number: 60,
+    numberSufix: {
+      sk: 'Tis+ microinflu',
+      en: 'K+ microinflu',
+    },
     text: {
-      en: 'microinfluencers in database.',
-      sk: 'microinfluencerov v databáze.',
+      en: 'Our databases contain tens of thousands of micro-influencers from Slovakia and the Czech Republic.',
+      sk: 'V našich databázach sa nachádzajú desiatky tisíc microinfluencerov zo Slovenska a Česka.',
     },
   },
   {
     number: 500,
-    numberSufix: '+',
+    numberSufix: {
+      sk: '+ kampaní',
+      en: '+ campaigns ',
+    },
     text: {
-      en: 'campaigns.',
-      sk: 'kampaní',
+      en: 'Over the past 10 years, we have successfully managed hundreds of campaigns for clients in various segments.',
+      sk: 'Za posledných 10 rokov sme úspešne odservisovali stovky kampaní pre klientov najrôznejšich segmentov.',
     },
   },
 ];
 
 export const OurNumbers = () => {
-  const { t } = useTranslation('ourNumbers');
+  const { t, i18n } = useTranslation('ourNumbers');
+  const lang = i18n.language ?? 'en';
   return (
-    <Box pt={rem(292)} pb={rem(227)} px={rem(72)}>
+    <Box
+      pt={{ base: rem(104), lg: rem(160), '2xl': rem(200), '3xl': rem(292) }}
+      pb={{ base: rem(60), lg: rem(120), '2xl': rem(180), '3xl': rem(227) }}
+      px={{ base: rem(28), lg: rem(72) }}
+    >
       <Text
         fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
         color="white"
-        fontSize={rem(104)}
-        lineHeight={rem(124)}
+        fontSize={{ base: rem(34), xs: rem(44), lg: rem(104) }}
+        lineHeight={{ base: rem(58), lg: rem(124) }}
+        pr={{ base: rem(40), lg: 0 }}
       >
         {t('ourNumbers:heading_1')}
       </Text>
-      <Flex alignItems="center" columnGap={rem(24)}>
-        <ArrowBig />
+      <Flex
+        alignItems={{ base: 'flex-start', lg: 'center' }}
+        columnGap={rem(24)}
+      >
+        <Box
+          mt={{ base: rem(16), lg: 0 }}
+          width={{ base: rem(48), md: rem(96) }}
+          minWidth={{ base: rem(48), md: rem(96) }}
+        >
+          <ArrowBig />
+        </Box>
         <Text
           fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
           color="#767676"
-          fontSize={rem(104)}
-          lineHeight={rem(124)}
+          fontSize={{ base: rem(34), xs: rem(44), lg: rem(104) }}
+          lineHeight={{ base: rem(58), lg: rem(124) }}
           mt={rem(16)}
         >
           {t('ourNumbers:heading_2')}
         </Text>
       </Flex>
-      <Box mt={rem(236)}>
-        <Flex>
-          <Box width="50%">
-            <Flex mb={rem(32)}>
-              <Box width="calc(50% - 16px)" mr={rem(16)} height="auto">
+      <Box mt={{ base: rem(100), md: rem(236) }}>
+        <Flex flexDirection={{ base: 'column', '2xl': 'row' }}>
+          <Box width={{ base: '100%', '2xl': '50%' }}>
+            <Flex mb={rem(32)} flexDir={{ base: 'column', sm: 'row' }}>
+              <Box
+                width={{ base: '100%', sm: 'calc(50% - 16px)' }}
+                mr={{ base: 0, sm: rem(16) }}
+                height="auto"
+                mb={{ base: rem(32), sm: 0 }}
+              >
                 <CounterCarousel
                   slides={SLIDES_1}
                   classNameOverride="first-counter"
                 />
               </Box>
-              <Box width="calc(50% - 16px)" ml={rem(16)} height="auto">
+              <Box
+                width={{ base: '100%', sm: 'calc(50% - 16px)' }}
+                ml={{ base: 0, sm: rem(16) }}
+                height="auto"
+              >
                 <CounterCarousel
                   slides={SLIDES_2}
                   classNameOverride="second-counter"
                 />
               </Box>
             </Flex>
-            <TrustedBy />
+            <Box display={{ base: 'none', md: 'block' }} mb={rem(32)}>
+              <TrustedBy />
+            </Box>
           </Box>
-          <Box pl={rem(32)} width="50%" height={rem(692)}>
-            <Flex height="100%">
+          <Box
+            pl={{ base: 0, '2xl': rem(32) }}
+            width={{ base: '100%', '2xl': '50%' }}
+            height={{ base: 'auto', md: rem(722) }}
+          >
+            <Flex height="100%" flexDir={{ base: 'column', md: 'row' }}>
               <Box
                 border={`1px solid ${colors.border}`}
                 borderRadius={rem(8)}
                 p={rem(40)}
                 pb={rem(0)}
-                width="calc(50% - 16px)"
+                width={{ base: '100%', md: 'calc(50% - 16px)' }}
                 height="100%"
-                mr={rem(16)}
+                mr={{ base: 0, md: rem(16) }}
+                mb={{ base: rem(32), md: 0 }}
               >
                 <OtherNumbersCarousel classNameOverride="other-numbers" />
               </Box>
@@ -133,17 +174,17 @@ export const OurNumbers = () => {
                 border={`1px solid ${colors.border}`}
                 borderRadius={rem(8)}
                 p={rem(40)}
-                width="calc(50% - 16px)"
-                ml={rem(16)}
+                width={{ base: '100%', md: 'calc(50% - 16px)' }}
+                mr={{ base: 0, md: rem(16) }}
               >
                 <Text
                   pb={rem(32)}
                   fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                  fontSize={rem(36)}
+                  fontSize={{ base: rem(26), '3xl': rem(26) }}
                   lineHeight={rem(42)}
                   color={colors.primary}
                 >
-                  Influencer marketing
+                  Rally Radosti
                 </Text>
                 <Text
                   pb={rem(32)}
@@ -151,22 +192,30 @@ export const OurNumbers = () => {
                   fontSize={rem(16)}
                   color={colors.primary}
                 >
-                  Database of local meme inluencers
+                  {lang === 'en'
+                    ? 'We are co-organizers and proud partners'
+                    : 'Sme spoluorganizátormi a hrdými partnermi'}
                 </Text>
                 <Text
                   fontFamily={FONT_FAMILY_FORMULA.MEDIUM}
                   fontSize={rem(16)}
                   color="white"
                 >
-                  We began incorporating meme creators for marketing purposes,
-                  and all the brands that experimented with this approach
-                  expressed satisfaction.
+                  {lang === 'en'
+                    ? `In its 5 years of existence, Rally Radosti has donated more than 200,000 EUR to Slovak hospitals. The money went to children's departments of hospitals in Bratislava, Banská Bystrica, Košice and Michalovce.`
+                    : 'Za 5 rokov existencie odovzdala Rally Radosti viac ako 200 tisíc EUR slovenským nemocniciam. Peniaze putovali detským oddeleniam nemocníc v Bratislave, Banskej Bystrici, Košiciach a Michalovciach.'}
                 </Text>
-                <Flex justifyContent="center" pt={rem(148)}>
+                <Flex
+                  justifyContent="center"
+                  pt={{ base: rem(100), '3xl': rem(148) }}
+                >
                   <LogoBig />
                 </Flex>
               </Box>
             </Flex>
+            <Box mt={rem(32)} display={{ base: 'block', md: 'none' }}>
+              <TrustedBy />
+            </Box>
           </Box>
         </Flex>
       </Box>

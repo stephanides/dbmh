@@ -1,8 +1,8 @@
-import { Box, Flex } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import { rem } from 'polished';
 import { NavLink } from 'reactstrap';
 import styled from 'styled-components';
-import { colors } from '../../design';
+import { FONT_FAMILY_MONO, colors, media } from '../../design';
 
 export const Wrapper = styled.div``;
 
@@ -126,7 +126,7 @@ type MobileNavContent = {
 };
 
 export const MobileNavContent = styled(Box)<MobileNavContent>`
-  z-index: 999;
+  z-index: 1000;
   width: 100%;
   max-width: 643px;
   height: 100%;
@@ -139,6 +139,7 @@ export const MobileNavContent = styled(Box)<MobileNavContent>`
   display: flex;
   flex-direction: column;
   background-color: ${colors.primary};
+  pointer-events: all;
 `;
 
 export const MobileNavContentIconHolder = styled.div`
@@ -233,4 +234,19 @@ export const Arrow = styled.div`
   color: ${colors.primary};
   width: 30px !important;
   height: 30px !important;
+`;
+
+export const MenuItem = styled(Text)`
+  font-family: ${FONT_FAMILY_MONO.REGULAR};
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: ${rem(64)};
+  color: white;
+  cursor: pointer;
+  ${media.down.xxl} {
+    font-size: ${rem(42)};
+  }
+  ${media.down.lg} {
+    font-size: ${rem(32)};
+  }
 `;

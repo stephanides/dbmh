@@ -16,12 +16,19 @@ import { ReactNode, useState } from 'react';
 import { omit } from 'lodash';
 import { CheckCircleIcon } from '@chakra-ui/icons';
 import {
+  EmailEn,
+  EmailMobileEn,
   FONT_FAMILY_FORMULA,
-  FONT_FAMILY_MONO,
+  MessageEn,
+  MessageMobileEn,
+  NameEn,
+  NameMobileEn,
   SecondaryButton,
+  StyledCheckbox,
   StyledInput,
   StyledTextArea,
   colors,
+  media,
 } from '../../design';
 import styled from 'styled-components';
 import { rem } from 'polished';
@@ -29,24 +36,25 @@ import Link from 'next/link';
 // import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 type CustomInputProps = {
-  children: ReactNode;
-  title: string;
+  input: ReactNode;
+  title: ReactNode;
+  titleMobile: ReactNode;
 };
 
-const CustomInput = ({ children, title }: CustomInputProps) => (
-  <Flex position="relative">
-    <Text
-      fontFamily={FONT_FAMILY_MONO.REGULAR}
-      fontWeight={700}
-      fontSize={rem(200)}
-      lineHeight={rem(200)}
-      color={colors.primaryLight}
-      userSelect="none"
-    >
-      <Trans i18nKey={title} />
-    </Text>
+const CustomInput = ({ input, title, titleMobile }: CustomInputProps) => (
+  <Flex
+    position="relative"
+    mb={rem(24)}
+    height={{ base: rem(50), sm: rem(100), lg: rem(140) }}
+  >
+    <Box display={{ base: 'none', lg: 'block' }} maxW={rem(826)}>
+      {title}
+    </Box>
+    <Box display={{ base: 'block', lg: 'none' }} maxW={rem(826)}>
+      {titleMobile}
+    </Box>
     <Flex position="absolute" left={0} top={0} height="100%">
-      {children}
+      {input}
     </Flex>
   </Flex>
 );
@@ -135,56 +143,73 @@ export const ContactForm = () => {
       validateOnBlur={false}
     >
       {({ handleSubmit, errors, values, setFieldValue }) => (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} autoComplete="off">
           <FormControl isInvalid={!!errors.name}>
-            <CustomInput title={'footer:name'}>
-              <Field
-                as={StyledInput}
-                id="name"
-                name="name"
-                type="text"
-                placeholder={t('footer:name_placeholder')}
-                variant="filled"
-              />
-            </CustomInput>
+            <CustomInput
+              title={<NameEn />}
+              titleMobile={<NameMobileEn />}
+              input={
+                <Field
+                  as={StyledInput}
+                  id="name"
+                  name="name"
+                  type="text"
+                  placeholder={t('footer:name_placeholder')}
+                  variant="filled"
+                />
+              }
+            ></CustomInput>
             <StyledFormErrorMessage>{errors.name}</StyledFormErrorMessage>
           </FormControl>
           <FormControl isInvalid={!!errors.email}>
-            <CustomInput title={'footer:email'}>
-              <Field
-                as={StyledInput}
-                id="email"
-                name="email"
-                type="email"
-                variant="filled"
-                placeholder={t('footer:email_placeholder')}
-              />
-            </CustomInput>
+            <CustomInput
+              title={<EmailEn />}
+              titleMobile={<EmailMobileEn />}
+              input={
+                <Field
+                  as={StyledInput}
+                  id="email"
+                  name="email"
+                  type="email"
+                  variant="filled"
+                  placeholder={t('footer:email_placeholder')}
+                />
+              }
+            ></CustomInput>
             <StyledFormErrorMessage>{errors.email}</StyledFormErrorMessage>
           </FormControl>
           <FormControl isInvalid={!!errors.message}>
-            <CustomInput title={'footer:message'}>
-              <Field
-                as={StyledTextArea}
-                id="message"
-                name="message"
-                rows={1}
-                placeholder={t('footer:message_placeholder')}
-              />
-            </CustomInput>
+            <CustomInput
+              title={<MessageEn />}
+              titleMobile={<MessageMobileEn />}
+              input={
+                <Field
+                  as={StyledTextArea}
+                  id="message"
+                  name="message"
+                  rows={1}
+                  placeholder={t('footer:message_placeholder')}
+                />
+              }
+            ></CustomInput>
             <StyledFormErrorMessage>{errors.message}</StyledFormErrorMessage>
           </FormControl>
-          <Flex mt={rem(92)} alignItems="center">
-            <SecondaryButton
+          <Flex
+            mt={rem(92)}
+            alignItems={{ base: 'flex-start', md: 'center' }}
+            flexDir={{ base: 'column-reverse', md: 'row' }}
+            width="100%"
+          >
+            <StyledSecondaryButton
               disabled={!values.agreements || isLoading}
               type="submit"
             >
               {t('footer:send')}
-            </SecondaryButton>
+            </StyledSecondaryButton>
 
-            <Box ml={rem(72)}>
+            <Box ml={{ base: 0, md: rem(72) }} mb={{ base: rem(32), md: 0 }}>
               <Field
-                as={Checkbox}
+                as={StyledCheckbox}
                 size="sm"
                 labelColor="white"
                 name="agreements"
@@ -209,5 +234,11 @@ const StyledFormErrorMessage = styled(FormErrorMessage)`
 const StyledCheckIcon = styled(CheckCircleIcon)`
   path {
     color: white;
+  }
+`;
+
+const StyledSecondaryButton = styled(SecondaryButton)`
+  ${media.down.md} {
+    width: 100%;
   }
 `;

@@ -1,6 +1,7 @@
 import { Box, Flex } from '@chakra-ui/react';
 import { rem } from 'polished';
 import styled, { keyframes, css } from 'styled-components';
+import { media } from '../../../../shared/design';
 
 type CarouselPaginationDotProps = {
   className: string;
@@ -54,6 +55,9 @@ const Wrapper = styled(Flex)<{
   border-radius: 0;
   opacity: 1;
   cursor: pointer;
+  ${media.down.md} {
+    width: ${rem(80)};
+  }
   &:hover {
     ${Bullet} {
       opacity: 1;

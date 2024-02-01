@@ -78,11 +78,13 @@
     "react-scroll": "^1.8.9",
     "react-scrollmagic": "^2.3.0",
     "react-select": "^5.2.2",
+    "react-slick": "^0.30.1",
     "reactstrap": "^8.9.0",
     "sass": "^1.56.1",
     "simple-react-lightbox": "3.6.4",
+    "slick-carousel": "^1.8.1",
     "slugify": "^1.6.5",
-    "styled-components": "^5.2.1",
+    "styled-components": "5.2.1",
     "swiper": "6.5.0",
     "yup": "^1.1.1"
   },
@@ -107,10 +109,10 @@
     "eslint-plugin-react-hooks": "^3.0.0",
     "prettier": "^2.0.4",
     "ts-node": "^10.2.1",
-    "typescript": "^4.4.3"
+    "typescript": "4.4.3"
   },
   "resolutions": {
-    "**/@types/react": "^17.0.21",
-    "**/@types/react-dom": "^17.0.9"
+    "**/@types/react": "17.0.21",
+    "**/@types/react-dom": "17.0.9"
   }
 }

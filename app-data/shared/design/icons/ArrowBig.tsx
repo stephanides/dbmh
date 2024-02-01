@@ -2,8 +2,8 @@ import { IconProps } from '.';
 
 export const ArrowBig = (props: IconProps) => (
   <svg
-    width="95"
-    height="69"
+    width="100%"
+    height="auto"
     viewBox="0 0 95 69"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

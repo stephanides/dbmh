@@ -1,4 +1,3 @@
-import { rem } from 'polished';
 import styled from 'styled-components';
 import { colors } from './colors';
 

@@ -21,7 +21,10 @@ const AnimatedNumbers = dynamic(() => import('react-animated-numbers'), {
 
 export type CounterCarouselSlide = {
   number: number;
-  numberSufix: string;
+  numberSufix: {
+    sk: string;
+    en: string;
+  };
   text: {
     sk: string;
     en: string;
@@ -51,7 +54,7 @@ export const CounterCarousel = ({
       borderRadius={rem(8)}
       px={rem(40)}
       width="100%"
-      height={rem(330)}
+      height={rem(360)}
     >
       <Swiper
         observer
@@ -76,24 +79,33 @@ export const CounterCarousel = ({
           <SwiperSlide key={i}>
             <Box pt={rem(40)}>
               <Flex>
-                <AnimatedNumbers
-                  transitions={(index) => ({
-                    type: 'spring',
-                    duration: index + 0.3,
-                  })}
-                  animateToNumber={activeNumber}
-                  fontStyle={{
-                    fontSize: 36,
-                    fontFamily: FONT_FAMILY_FORMULA.EXTRA_BOLD,
-                    color: colors.primary,
-                  }}
-                />
                 <Text
                   fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                  fontSize={rem(36)}
+                  fontSize={rem(26)}
                   color={colors.primary}
                 >
-                  {slide.numberSufix}
+                  <AnimatedNumbers
+                    transitions={(index) => ({
+                      type: 'spring',
+                      duration: index + 0.3,
+                    })}
+                    animateToNumber={activeNumber}
+                    fontStyle={{
+                      fontSize: 26,
+                      fontFamily: FONT_FAMILY_FORMULA.EXTRA_BOLD,
+                      color: colors.primary,
+                    }}
+                    className="animated-number"
+                  />
+                  <Text
+                    fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
+                    fontSize={rem(26)}
+                    color={colors.primary}
+                    ml={rem(12)}
+                    as="span"
+                  >
+                    {slide.numberSufix[lang]}
+                  </Text>
                 </Text>
               </Flex>
               <Text

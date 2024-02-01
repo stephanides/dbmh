@@ -4,9 +4,9 @@ import { rem } from 'polished';
 import {
   FONT_FAMILY_FORMULA,
   FONT_FAMILY_MONO,
-  PrimaryButton,
   Unmute,
   colors,
+  media,
 } from '../../../../shared/design';
 import { Podcast } from './Podcasts';
 import { useTranslation } from 'react-i18next';
@@ -16,9 +16,17 @@ import Image from 'next/image';
 type PodcastSlideProps = {
   podcast: Podcast;
   activeSlide: number;
+  isActive: boolean;
+  isMuted: boolean;
+  setIsMuted: (value: boolean) => void;
 };
 
-export const PodcastSlide = ({ podcast, activeSlide }: PodcastSlideProps) => {
+export const PodcastSlide = ({
+  podcast,
+  isActive,
+  isMuted,
+  setIsMuted,
+}: PodcastSlideProps) => {
   const { i18n } = useTranslation();
   const lang = i18n.language ?? 'en';
   const audioRef = useRef(null);
@@ -26,24 +34,36 @@ export const PodcastSlide = ({ podcast, activeSlide }: PodcastSlideProps) => {
   useEffect(() => {
     // @ts-ignore
     if (navigator.userActivation.hasBeenActive) {
-      if (audioRef.current && activeSlide === podcast.index) {
+      if (audioRef.current && isActive) {
         audioRef.current.play();
+
+        audioRef.current.muted = isMuted;
       } else {
         audioRef.current.pause();
         audioRef.current.currentTime = 0;
       }
     }
-  }, [activeSlide]);
+  }, [isActive, isMuted]);
 
   const handleMuteUnmute = () => {
-    if (audioRef.current) {
-      audioRef.current.muted = !audioRef.current.muted;
-    }
+    setIsMuted(!isMuted);
   };
 
   return (
-    <Flex>
-      <Box minWidth={rem(315)} width={rem(315)}>
+    <Flex
+      flexDir={{ base: 'column', lg: 'row' }}
+      backgroundColor="#151515"
+      borderRadius={rem(20)}
+      py={rem(64)}
+      px={{ base: rem(32), lg: rem(75) }}
+    >
+      <Flex
+        minWidth={{ lg: rem(200), xl: rem(315) }}
+        width={{ base: '100%', lg: rem(200), xl: rem(315) }}
+        flexDir={{ base: 'row', lg: 'column' }}
+        alignItems={'flex-start'}
+        justifyContent={{ base: 'center', lg: 'flex-start' }}
+      >
         <Image
           src={podcast.logo}
           width="0"
@@ -68,12 +88,24 @@ export const PodcastSlide = ({ podcast, activeSlide }: PodcastSlideProps) => {
           fontFamily={FONT_FAMILY_MONO}
           fontWeight={500}
           mt={rem(18)}
+          mb={{ base: rem(60), lg: 0 }}
+          ml={{ base: rem(14), lg: 0 }}
           dangerouslySetInnerHTML={{ __html: podcast.company }}
         />
-      </Box>
+      </Flex>
       <Box width="100%">
-        <Flex justifyContent="space-between">
-          <Flex alignItems="center">
+        <Flex
+          justifyContent="space-between"
+          flexDir={{ base: 'column-reverse', lg: 'row' }}
+          alignItems={{ base: 'center', lg: 'center' }}
+          mb={{ base: rem(42), lg: 0 }}
+        >
+          <Flex
+            alignItems="center"
+            mt={{ base: rem(24), lg: 0 }}
+            minW={{ base: '100%', lg: rem(400) }}
+            justifyContent={{ base: 'center', lg: 'flex-start' }}
+          >
             <Image
               src={podcast.avatar}
               width="0"
@@ -95,26 +127,40 @@ export const PodcastSlide = ({ podcast, activeSlide }: PodcastSlideProps) => {
               {podcast.name}
             </Text>
           </Flex>
-          <StyledButton onClick={handleMuteUnmute}>
-            <Unmute />{' '}
-            <Text
-              fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-              as="span"
-              lineHeight={rem(18)}
-              position="relative"
-              top={rem(2)}
+          <Flex alignItems="center" width="100%" justifyContent="flex-end">
+            <Box
+              width={rem(100)}
+              ml="calc(50% - 50px)"
+              display={{ base: 'block', lg: 'none' }}
             >
-              UNMUTE
-            </Text>
-          </StyledButton>
+              <img src="/podcasts/wave.gif" alt="Wave" />
+            </Box>
+            <StyledButton onClick={handleMuteUnmute}>
+              <Unmute />
+              <Text
+                fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
+                as="span"
+                lineHeight={rem(18)}
+                position="relative"
+                top={rem(2)}
+                display={{ base: 'none', lg: 'block' }}
+              >
+                {isMuted ? 'UNMUTE' : 'MUTE'}
+              </Text>
+            </StyledButton>
+          </Flex>
         </Flex>
-        <Box width={rem(132)} mt={rem(32)}>
+        <Box
+          width={rem(132)}
+          mt={rem(32)}
+          display={{ base: 'none', lg: 'block' }}
+        >
           <img src="/podcasts/wave.gif" alt="Wave" />
         </Box>
         <Box position="relative">
           <Text
             color="white"
-            fontSize={rem(24)}
+            fontSize={{ base: rem(18), lg: rem(24) }}
             fontFamily={FONT_FAMILY_FORMULA.REGULAR}
             pt={rem(30)}
             maxW={rem(1000)}
@@ -137,10 +183,11 @@ export const PodcastSlide = ({ podcast, activeSlide }: PodcastSlideProps) => {
           <a href={podcast.href} target="_blank">
             <Text
               fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-              fontSize={rem(24)}
+              fontSize={{ base: rem(20), lg: rem(24) }}
               color={colors.primary}
               textTransform="uppercase"
               textDecoration="underline"
+              textAlign={{ base: 'center', lg: 'left' }}
             >
               {lang === 'en'
                 ? 'Listen full podcast'
@@ -172,5 +219,8 @@ const StyledButton = styled.button`
   &:focus {
     background: transparent;
     border: 1px solid ${colors.primary};
+  }
+  ${media.down.lg} {
+    margin-left: auto;
   }
 `;

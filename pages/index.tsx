@@ -7,20 +7,13 @@ import { VideoReferences } from '../app-data/components/web/Homepage/VideoRefere
 import { AboutUs } from '../app-data/components/web/Homepage/AboutUs';
 import { OurNumbers } from '../app-data/components/web/Homepage/OurNumbers/OurNumbers';
 import { Statements } from '../app-data/components/web/Homepage/Statements';
-import { Heading } from '../app-data/components/web/Homepage/Heading/Heading';
 import { References } from '../app-data/components/web/Homepage/References/References';
 import { Podcasts } from '../app-data/components/web/Homepage/Podcasts/Podcasts';
 import { Navigation } from '../app-data/shared/components/SiteLayout/Navigation';
 
 const Home = () => {
   return (
-    <SiteLayout
-      currentUrl="/"
-      description="Správny partner 
-    pre Vašu cestu."
-    >
-      <Heading />
-      <Navigation isSticky />
+    <SiteLayout currentUrl="/">
       <Statements />
       <AboutUs />
       <VideoReferences />

@@ -1,9 +1,13 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import styled from 'styled-components';
-import { Box, Flex, Text } from '@chakra-ui/react';
-import { ArrowLeftCircle, ArrowRightCircle } from '../../../../shared/design';
+import { Box, Flex } from '@chakra-ui/react';
+import {
+  ArrowLeftCircle,
+  ArrowRightCircle,
+  media,
+} from '../../../../shared/design';
 import { rem } from 'polished';
 import { useTranslation } from 'react-i18next';
 import { PodcastSlide } from './PodcastSlide';
@@ -27,45 +31,45 @@ export type Podcast = {
 const SLIDES = [
   {
     index: 0,
-    name: 'Dany Čačala',
-    company: 'Buzzworld<br /> by Gabo & Peťo',
+    name: 'Tony',
+    company: 'Tony',
     description: {
-      sk: 'Presne tak, kupuješ si autenticitu. To ti nenahradí žiaden veľký influencer. Dnes idú firmy a agentúry po tých najväčších, čo majú obrovské čísla. Ale skúsme si to obrátiť. Prečo neísť po kvantite malých influencerov, ktorý na konci dňa majú vyšší engadgement rate. Tá rovnica je úplne jasná. To je matematika a excel, to neoklameš. Toto nie sú dojmy.',
-      en: 'Presne tak, kupuješ si autenticitu. To ti nenahradí žiaden veľký influencer. Dnes idú firmy a agentúry po tých najväčších, čo majú obrovské čísla. Ale skúsme si to obrátiť. Prečo neísť po kvantite malých influencerov, ktorý na konci dňa majú vyšší engadgement rate. Tá rovnica je úplne jasná. To je matematika a excel, to neoklameš. Toto nie sú dojmy.',
+      sk: 'Celé to začalo v roku 2013 vytvorením známych facebookových a instagramových značiek @dnes_nosím, @dnes_jem, @dnes_cestujem a ostatných, kde sme v priebehu nasledujúcich rokov organicky nabrali vysoké státisíce ľudí, až sme sa dostali k méte jedného milióna sledovateľov…',
+      en: 'Celé to začalo v roku 2013 vytvorením známych facebookových a instagramových značiek @dnes_nosím, @dnes_jem, @dnes_cestujem a ostatných, kde sme v priebehu nasledujúcich rokov organicky nabrali vysoké státisíce ľudí, až sme sa dostali k méte jedného milióna sledovateľov…',
     },
     title: 'followers',
-    href: 'https://google.com',
+    href: 'https://podcasts.apple.com/sk/podcast/pre%C4%8Do-spolupracova%C5%A5-s-mikroinfluencermi-daniel-%C4%8Da%C4%8Dala/id1551746459?i=1000630921517',
     avatar: '/images/podcasts/1/avatar.png',
     logo: '/images/podcasts/1/logo.jpg',
-    podcast_example: '/podcasts/buzzworld.mp3',
+    podcast_example: '/podcasts/tony.mp3',
   },
   {
     index: 1,
-    name: 'Dany Čačala',
-    company: 'Buzzworld<br /> by Gabo & Peťo',
+    name: 'STU',
+    company: 'STU',
     description: {
-      sk: 'Presne tak, kupuješ si autenticitu. To ti nenahradí žiaden veľký influencer. Dnes idú firmy a agentúry po tých najväčších, čo majú obrovské čísla. Ale skúsme si to obrátiť. Prečo neísť po kvantite malých influencerov, ktorý na konci dňa majú vyšší engadgement rate. Tá rovnica je úplne jasná. To je matematika a excel, to neoklameš. Toto nie sú dojmy.',
-      en: 'Presne tak, kupuješ si autenticitu. To ti nenahradí žiaden veľký influencer. Dnes idú firmy a agentúry po tých najväčších, čo majú obrovské čísla. Ale skúsme si to obrátiť. Prečo neísť po kvantite malých influencerov, ktorý na konci dňa majú vyšší engadgement rate. Tá rovnica je úplne jasná. To je matematika a excel, to neoklameš. Toto nie sú dojmy.',
+      sk: 'Čiže to znamená v realite tak, že tá firma príde s nejakým briefom, vy ten brief následne rozošlete tým microinfluencerom, ktorí by sa mali podieľať na tej kampani a na základe toho potom oni tvoria ten content? Len trošičku upresním. Agentúra alebo značka...',
+      en: 'Čiže to znamená v realite tak, že tá firma príde s nejakým briefom, vy ten brief následne rozošlete tým microinfluencerom, ktorí by sa mali podieľať na tej kampani a na základe toho potom oni tvoria ten content? Len trošičku upresním. Agentúra alebo značka…',
     },
     title: 'followers',
-    href: 'https://google.com',
+    href: 'https://podcasts.apple.com/sk/podcast/startitup-podcasty/id1446070403?i=1000630725238',
     avatar: '/images/podcasts/1/avatar.png',
     logo: '/images/podcasts/1/logo.jpg',
     podcast_example: '/podcasts/startitup.mp3',
   },
   {
     index: 2,
-    name: 'Dany Čačala',
+    name: 'Buzzworld',
     company: 'Buzzworld<br /> by Gabo & Peťo',
     description: {
-      sk: 'Presne tak, kupuješ si autenticitu. To ti nenahradí žiaden veľký influencer. Dnes idú firmy a agentúry po tých najväčších, čo majú obrovské čísla. Ale skúsme si to obrátiť. Prečo neísť po kvantite malých influencerov, ktorý na konci dňa majú vyšší engadgement rate. Tá rovnica je úplne jasná. To je matematika a excel, to neoklameš. Toto nie sú dojmy.',
-      en: 'Presne tak, kupuješ si autenticitu. To ti nenahradí žiaden veľký influencer. Dnes idú firmy a agentúry po tých najväčších, čo majú obrovské čísla. Ale skúsme si to obrátiť. Prečo neísť po kvantite malých influencerov, ktorý na konci dňa majú vyšší engadgement rate. Tá rovnica je úplne jasná. To je matematika a excel, to neoklameš. Toto nie sú dojmy.',
+      sk: 'To, čo hovoríš, je brutálne zaujímavé. Čo som si uvedomil pri tejto kampani, že ty vlastne cez tých microinfluencerov ako keby targetuješ, microtargetuješ a cieliš. Že vlastne vieš bežne využívať cielenie cez výber toho konkrétneho influencera. Áno, áno, ty hľadáš veľmi malé bubliny, ktoré vložíš do veľkej bubliny a tuto sme sa bavili o ľuďoch, ktorí majú…',
+      en: 'To, čo hovoríš, je brutálne zaujímavé. Čo som si uvedomil pri tejto kampani, že ty vlastne cez tých microinfluencerov ako keby targetuješ, microtargetuješ a cieliš. Že vlastne vieš bežne využívať cielenie cez výber toho konkrétneho influencera. Áno, áno, ty hľadáš veľmi malé bubliny, ktoré vložíš do veľkej bubliny a tuto sme sa bavili o ľuďoch, ktorí majú…',
     },
     title: 'followers',
-    href: 'https://google.com',
+    href: 'https://podcasts.apple.com/sk/podcast/buzzworld-by-gabo-pe%C5%A5o/id1605497773?i=1000625472947',
     avatar: '/images/podcasts/1/avatar.png',
     logo: '/images/podcasts/1/logo.jpg',
-    podcast_example: '/podcasts/tony.mp3',
+    podcast_example: '/podcasts/buzzworld.mp3',
   },
 ];
 
@@ -73,21 +77,17 @@ export const Podcasts = () => {
   const { i18n } = useTranslation();
   const lang = i18n.language ?? 'en';
   const [activeSlide, setActiveSlide] = useState(0);
+  const [isMuted, setIsMuted] = useState(true);
 
   const handleSlideChange = (swiper) => {
     // Update the active slide index in the state
     setActiveSlide(swiper.activeIndex);
   };
 
-  console.log(activeSlide);
-
   return (
     <Box
-      backgroundColor="#151515"
-      borderRadius={rem(20)}
-      mx={rem(190)}
-      py={rem(64)}
-      px={rem(75)}
+      position="relative"
+      mx={{ base: rem(28), lg: rem(72), '3xl': rem(190) }}
       mb={rem(198)}
     >
       <Swiper
@@ -95,6 +95,7 @@ export const Podcasts = () => {
         tag={SwiperWrapper}
         slidesPerView={1}
         direction="horizontal"
+        spaceBetween={32}
         speed={1200}
         onSlideChange={handleSlideChange}
         navigation={{
@@ -105,22 +106,34 @@ export const Podcasts = () => {
       >
         {SLIDES.map((slide, i) => (
           <SwiperSlide key={i}>
-            <PodcastSlide podcast={slide} activeSlide={activeSlide} />
+            {/* @ts-ignore */}
+            {({ isActive }) => {
+              return (
+                <PodcastSlide
+                  podcast={slide}
+                  activeSlide={activeSlide}
+                  isActive={activeSlide === i}
+                  isMuted={isMuted}
+                  setIsMuted={setIsMuted}
+                />
+              );
+            }}
           </SwiperSlide>
         ))}
-        <Controls>
-          <ControlsWrapper>
-            <SwiperArrow className="swiper-button-prev-podcasts">
-              <ArrowLeftCircle />
-            </SwiperArrow>
-            <Box ml={rem(28)}>
-              <SwiperArrow className="swiper-button-next-podcasts">
-                <ArrowRightCircle />
-              </SwiperArrow>
-            </Box>
-          </ControlsWrapper>
-        </Controls>
       </Swiper>
+
+      <Controls>
+        <ControlsWrapper>
+          <SwiperArrow className="swiper-button-prev-podcasts">
+            <ArrowLeftCircle />
+          </SwiperArrow>
+          <Box ml={rem(28)}>
+            <SwiperArrow className="swiper-button-next-podcasts">
+              <ArrowRightCircle />
+            </SwiperArrow>
+          </Box>
+        </ControlsWrapper>
+      </Controls>
     </Box>
   );
 };
@@ -135,8 +148,14 @@ const SwiperWrapper = styled.div`
 
 const Controls = styled.div`
   position: absolute;
-  bottom: 0;
+  bottom: 64px;
   z-index: 1;
+  left: 72px;
+  ${media.down.lg} {
+    bottom: -80px;
+    width: 100%;
+    left: 0;
+  }
 `;
 
 const ControlsWrapper = styled(Flex)`
@@ -148,6 +167,10 @@ const ControlsWrapper = styled(Flex)`
         stroke: #767676;
       }
     }
+  }
+  ${media.down.lg} {
+    display: flex;
+    justify-content: center;
   }
 `;
 

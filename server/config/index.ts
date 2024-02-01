@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 export const config = {
-  dbName: `fermo`,
+  dbName: `daybyme`,
   recaptcha: {
     secret: process.env.RECAPTCHA_SECRET,
   },

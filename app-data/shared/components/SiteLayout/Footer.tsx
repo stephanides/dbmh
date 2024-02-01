@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
+import { Element } from 'react-scroll';
 import { useTranslation } from 'next-i18next';
 import { Box, Flex, Text } from '@chakra-ui/react';
 import {
+  ContactEn,
   FONT_FAMILY_FORMULA,
   FONT_FAMILY_MONO,
   FooterLogo,
@@ -21,104 +23,136 @@ export const Footer = () => {
     });
   });
   return (
-    <Box backgroundColor={colors.primary} py={rem(112)} px={rem(72)}>
-      <Text
-        color="black"
-        fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-        fontSize={rem(48)}
-        lineHeight={rem(48)}
+    <Element name="contact">
+      <Box
+        backgroundColor={colors.primary}
+        py={rem(112)}
+        px={{ base: rem(28), lg: rem(72) }}
       >
-        {t('footer:title')}
-      </Text>
-      <Text
-        mt={rem(24)}
-        color="black"
-        fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-        fontSize={rem(28)}
-      >
-        {t('footer:subtitle')}
-      </Text>
-      <Flex mt={rem(102)}>
-        <Box width="50%">
-          <ContactForm />
-        </Box>
-        <Flex width="50%" justifyContent="flex-end">
-          <Box position="relative">
-            <Box position="absolute" top={0} right={0}>
-              <Text
-                fontFamily={FONT_FAMILY_MONO.REGULAR}
-                fontWeight={700}
-                fontSize={rem(200)}
-                lineHeight={rem(200)}
-                color={colors.primaryLight}
-                userSelect="none"
-              >
-                {t('footer:contact')}
-              </Text>
-            </Box>
-            <Flex
+        <Text
+          color="black"
+          fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
+          fontSize={rem(48)}
+          lineHeight={rem(48)}
+        >
+          {t('footer:title')}
+        </Text>
+        <Text
+          mt={rem(24)}
+          color="black"
+          fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
+          fontSize={rem(28)}
+        >
+          {t('footer:subtitle')}
+        </Text>
+        <Flex mt={rem(102)} flexDir={{ base: 'column', xl: 'row' }}>
+          <Box
+            width={{ base: '100%', xl: '50%' }}
+            minWidth={{ base: 'auto', xl: rem(700) }}
+          >
+            <ContactForm />
+          </Box>
+          <Flex
+            width={{ base: '100%', xl: '50%' }}
+            justifyContent={{ base: 'center', xl: 'flex-end' }}
+            mt={{ base: rem(124), xl: 0 }}
+          >
+            <Box
               position="relative"
-              zIndex={1}
-              mt={rem(100)}
-              flexDirection="column"
-              justifyContent="flex-end"
+              width="100%"
+              maxW={{ base: '100%', xl: rem(813) }}
             >
-              <Text
-                fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                fontSize={rem(28)}
-                color="black"
-                lineHeight={rem(32)}
+              <Flex position="relative">
+                <Box height={{ base: rem(80), sm: rem(100), lg: rem(140) }}>
+                  <ContactEn />
+                </Box>
+                <Box
+                  position="absolute"
+                  top="calc(50% - 14px)"
+                  right={{ base: 'unset', xl: 0 }}
+                  left={{ base: 0, xl: 'unset' }}
+                  width="100%"
+                >
+                  <Text
+                    fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
+                    fontSize={rem(28)}
+                    color="black"
+                    lineHeight={rem(32)}
+                    textAlign={{ base: 'left', xl: 'right' }}
+                    zIndex={2}
+                  >
+                    Daybyme Media House s. r. o.{' '}
+                  </Text>
+                </Box>
+              </Flex>
+              <Flex
+                position="relative"
+                zIndex={1}
+                mt={rem(60)}
+                flexDirection="column"
+                alignItems={{ base: 'flex-start', xl: 'flex-end' }}
               >
-                Daybyme Media House s. r. o.{' '}
-              </Text>
-              <Text
-                fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                fontSize={rem(28)}
-                color="black"
-                lineHeight={rem(32)}
-                mt={rem(52)}
-                textAlign="right"
-              >
-                Grösslingova 52,
-              </Text>
-              <Text
-                fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                fontSize={rem(28)}
-                color="black"
-                lineHeight={rem(32)}
-                textAlign="right"
-              >
-                811 09 Bratislava -
-              </Text>
-            </Flex>
-            <Flex columnGap={rem(8)} mt={rem(52)} justifyContent="flex-end">
-              <a href={SOCIAL_LINKS.fb} target="_blank">
-                <SocialLink>FB.</SocialLink>
-              </a>
-              <a href={SOCIAL_LINKS.ig} target="_blank">
-                <SocialLink>IG.</SocialLink>
-              </a>
-              <a href={SOCIAL_LINKS.in} target="_blank">
-                <SocialLink>IN.</SocialLink>
-              </a>
-            </Flex>
-            <Box position="absolute" bottom={0} width="100%">
-              <Flex flexDirection="column" alignItems="flex-end">
-                <FooterLogo />
                 <Text
                   fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                  fontSize={rem(16)}
+                  fontSize={rem(28)}
                   color="black"
-                  mt={rem(32)}
+                  lineHeight={rem(32)}
+                  mt={rem(52)}
+                  textAlign="right"
                 >
-                  EST. 2012
+                  Grösslingova 52,
+                </Text>
+                <Text
+                  fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
+                  fontSize={rem(28)}
+                  color="black"
+                  lineHeight={rem(32)}
+                  textAlign="right"
+                >
+                  811 09 Bratislava -
                 </Text>
               </Flex>
+              <Flex
+                columnGap={{ base: rem(24), xl: rem(8) }}
+                mt={rem(52)}
+                justifyContent={{ base: 'flex-start', xl: 'flex-end' }}
+              >
+                <a href={SOCIAL_LINKS.fb} target="_blank">
+                  <SocialLink>FB.</SocialLink>
+                </a>
+                <a href={SOCIAL_LINKS.ig} target="_blank">
+                  <SocialLink>IG.</SocialLink>
+                </a>
+                <a href={SOCIAL_LINKS.in} target="_blank">
+                  <SocialLink>IN.</SocialLink>
+                </a>
+              </Flex>
+              <Box
+                position={{ base: 'relative', xl: 'absolute' }}
+                bottom={0}
+                width="100%"
+              >
+                <Flex
+                  flexDirection="column"
+                  alignItems={{ base: 'center', xl: 'flex-end' }}
+                  mt={{ base: rem(100), xl: 0 }}
+                >
+                  <FooterLogo />
+                  <Text
+                    fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
+                    fontSize={rem(16)}
+                    color="black"
+                    mt={rem(32)}
+                  >
+                    EST. 2012
+                  </Text>
+                </Flex>
+              </Box>
             </Box>
-          </Box>
+          </Flex>
         </Flex>
-      </Flex>
-    </Box>
+      </Box>
+    </Element>
   );
 };
 

@@ -7,4 +7,5 @@ export const colors = {
   textInverted: '#FFFFFF',
   border: '#3C3C3C',
   pageBackground: '#1A1A1A',
+  backgroundDark: '#121212',
 };

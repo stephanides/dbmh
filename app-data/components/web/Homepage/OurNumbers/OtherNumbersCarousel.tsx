@@ -19,45 +19,33 @@ SwiperCore.use([Navigation, Pagination]);
 const SLIDES = [
   {
     number: 10,
-    numberSufix: 'K',
-    title: 'followers',
+    numberSufix: 'Bugatti SM',
+    title: 'Bugatti SM',
     subtitle: {
-      en: 'Could see our video.',
-      sk: 'Could see our video.',
+      en: 'Creating live content coverage for Bugatti social media with over 2,5M views and 230K interactions.',
+      sk: 'Vytváranie živého pokrytia pre sociálne médiá Bugatti s viac ako 2,5 miliónmi zobrazení a 230 000 interakciami.',
     },
-    text: {
-      en: 'označení hashtagov.',
-      sk: 'označení hashtagov.',
-    },
-    image: '/images/iphone_front.png',
+    image: '/images/buggati.png',
   },
   {
     number: 1,
-    numberSufix: 'K',
-    title: 'followers',
+    numberSufix: 'Rimac SM',
+    title: 'Rimac SM',
     subtitle: {
-      en: 'Could see our photo.',
-      sk: 'Could see our photo.',
+      en: 'Delivering content for Rimac Automobili social media. ',
+      sk: 'Poskytovanie obsahu pre sociálne médiá Rimac Automobili.',
     },
-    text: {
-      en: 'followers.',
-      sk: 'sledovateľov.',
-    },
-    image: '/images/iphone_front.png',
+    image: '/images/rimac.png',
   },
   {
     number: 1000,
-    numberSufix: 'K',
-    title: 'followers',
+    numberSufix: 'Internationally recognized',
+    title: 'Internationally recognized',
     subtitle: {
-      en: 'Could see our image.',
-      sk: 'Could see our image.',
+      en: 'Our team and content being internationally recognized by global brands (Porsche, BMW, Pagani).',
+      sk: 'Náš tím a obsah sú medzinárodne uznávané svetovými značkami (Porsche, BMW, Pagani).',
     },
-    text: {
-      en: 'registrations.',
-      sk: 'registrácií',
-    },
-    image: '/images/iphone_front.png',
+    image: '/images/ir.png',
   },
 ];
 
@@ -81,7 +69,7 @@ export const OtherNumbersCarousel = ({
   }, [lang]);
 
   return (
-    <Box width="100%" height="100%">
+    <Box width="100%" height={{ base: rem(600), md: '100%' }}>
       <Swiper
         observer
         onSlideChange={(swiper) => {
@@ -100,46 +88,13 @@ export const OtherNumbersCarousel = ({
         {SLIDES.map((slide, i) => (
           <SwiperSlide key={i}>
             <Box height="100%" position="relative">
-              <Flex>
-                <AnimatedNumbers
-                  transitions={(index) => ({
-                    type: 'spring',
-                    duration: index + 0.3,
-                  })}
-                  animateToNumber={activeNumber}
-                  fontStyle={{
-                    fontSize: 36,
-                    fontFamily: FONT_FAMILY_FORMULA.EXTRA_BOLD,
-                    color: colors.primary,
-                    lineHeight: rem(42),
-                  }}
-                />
-                <Text
-                  fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                  fontSize={rem(36)}
-                  color={colors.primary}
-                  lineHeight={rem(42)}
-                >
-                  {slide.numberSufix}
-                </Text>
-              </Flex>
-
               <Text
                 fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                fontSize={rem(36)}
+                fontSize={{ base: rem(26), '3xl': rem(26) }}
                 lineHeight={rem(42)}
                 color={colors.primary}
               >
                 {slide.title}
-              </Text>
-              <Text
-                fontFamily={FONT_FAMILY_FORMULA.MEDIUM}
-                color={colors.primary}
-                fontSize={rem(16)}
-                mt={rem(24)}
-                lineHeight={rem(22)}
-              >
-                {slide.subtitle[lang]}
               </Text>
               <Text
                 fontFamily={FONT_FAMILY_FORMULA.MEDIUM}
@@ -148,7 +103,7 @@ export const OtherNumbersCarousel = ({
                 mt={rem(24)}
                 lineHeight={rem(22)}
               >
-                {slide.text[lang]}
+                {slide.subtitle[lang]}
               </Text>
               <Flex
                 position="absolute"
@@ -156,14 +111,16 @@ export const OtherNumbersCarousel = ({
                 width="100%"
                 justifyContent="center"
               >
-                <Image
-                  src={slide.image}
-                  width="0"
-                  height="0"
-                  sizes="100vw"
-                  style={{ width: '100%', height: 'auto', maxWidth: rem(340) }}
-                  alt={slide.subtitle[lang]}
-                />
+                <Box maxWidth={{ base: rem(280), md: rem(200) }} width="100%">
+                  <Image
+                    src={slide.image}
+                    width="0"
+                    height="0"
+                    sizes="100vw"
+                    style={{ width: '100%', height: 'auto' }}
+                    alt={slide.subtitle[lang]}
+                  />
+                </Box>
               </Flex>
             </Box>
           </SwiperSlide>

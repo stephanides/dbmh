@@ -4,7 +4,6 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { rem } from 'polished';
 import { CustomContainer, SiteLayout } from '../app-data/shared/components';
 import { colors, PrimaryLink } from '../app-data/shared/design';
-import { Icon404 } from '../app-data/shared/design/icons/Icon404';
 
 const Custom404 = () => {
   const { t } = useTranslation(['common']);

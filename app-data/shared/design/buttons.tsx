@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { colors } from './colors';
 import { rem } from 'polished';
 import { FONT_FAMILY_FORMULA } from './typography';
+import { media } from './media';
 
 type ButtonProps = {
   size?: 'small' | 'big';
@@ -47,6 +48,7 @@ export const SecondaryButton = styled(Button)<ButtonProps>`
   display: inline;
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
   &:after {
     content: '';
     position: absolute;
@@ -58,6 +60,12 @@ export const SecondaryButton = styled(Button)<ButtonProps>`
     transition-property: width;
     transition-duration: 0.3s;
     transition-timing-function: ease-out;
+    ${media.down.md} {
+      left: 0;
+      right: auto;
+      width: 100% !important;
+      color: black !important;
+    }
   }
   &:hover {
     background: none;

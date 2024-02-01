@@ -7,6 +7,13 @@ export * from './ArrowRightCircle';
 export * from './LogoBig';
 export * from './FooterLogo';
 export * from './Unmute';
+export * from './NameEn';
+export * from './EmailEn';
+export * from './MessageEn';
+export * from './ContactEn';
+export * from './EmailMobileEn';
+export * from './MessageMobileEn';
+export * from './NameMobileEn';
 
 export type IconProps = {
   width?: string;

@@ -7,6 +7,19 @@ import {
   ContentSixth,
   ContentThird,
 } from './Contents';
+import {
+  ContentFirst as MobileContentFirst,
+  ContentSecond as MobileContentSecond,
+  ContentThird as MobileContentThird,
+  ContentFourth as MobileContentFourth,
+  ContentSixth as MobileContentSixth,
+  ContentSeventh as MobileContentSeventh,
+  ContentEigth as MobileContentEigth,
+  ContentNineth as MobileContentNineth,
+  ContentTenth as MobileContentTenth,
+  ContentTop,
+  ContentUnderTop,
+} from './ContentsMobile';
 import { rem } from 'polished';
 import { useEffect, useState } from 'react';
 import { HeadingImage } from './HeadingImage';
@@ -36,16 +49,21 @@ export const Heading = () => {
     return () => clearTimeout(timeoutId);
   }, []);
   return (
-    <Box pl={rem(56)} pr={rem(46)}>
-      <Flex rowGap={rem(20)} flexDirection="column">
+    <Box
+      pl={{ base: rem(20), lg: rem(56) }}
+      pr={{ base: rem(20), lg: rem(46) }}
+    >
+      <Flex
+        rowGap={{ base: rem(12), '3xl': rem(20) }}
+        flexDirection="column"
+        display={{ base: 'none', lg: 'flex' }}
+      >
         <Box
           className={`animated-heading-left ${isVisible ? 'visible' : ''}`}
           position="relative"
+          display={{ base: 'none', '3xl': 'block' }}
         >
           <ContentFirst />
-          <Box position="absolute" left="11.3%" top={0} height="100%">
-            <HeadingImage images={IMAGES} />
-          </Box>
         </Box>
         <Box className={`animated-heading-right ${isVisible ? 'visible' : ''}`}>
           <ContentSecond />
@@ -55,9 +73,6 @@ export const Heading = () => {
           position="relative"
         >
           <ContentThird />
-          <Box position="absolute" right="17.3%" top={0} height="100%">
-            <HeadingImage images={IMAGES2} />
-          </Box>
         </Box>
         <Box className={`animated-heading-right ${isVisible ? 'visible' : ''}`}>
           <ContentFourth />
@@ -67,6 +82,63 @@ export const Heading = () => {
         </Box>
         <Box className={`animated-heading-right ${isVisible ? 'visible' : ''}`}>
           <ContentSixth />
+        </Box>
+      </Flex>
+      <Flex
+        rowGap={rem(8)}
+        flexDirection="column"
+        display={{ base: 'flex', lg: 'none' }}
+      >
+        <Box
+          className={`animated-heading-left ${isVisible ? 'visible' : ''}`}
+          position="relative"
+        >
+          <ContentTop />
+        </Box>
+        <Box className={`animated-heading-right ${isVisible ? 'visible' : ''}`}>
+          <ContentUnderTop />
+        </Box>
+        <Box
+          className={`animated-heading-left ${isVisible ? 'visible' : ''}`}
+          position="relative"
+        >
+          <MobileContentFirst />
+        </Box>
+        <Box className={`animated-heading-right ${isVisible ? 'visible' : ''}`}>
+          <MobileContentSecond />
+        </Box>
+        <Box
+          className={`animated-heading-left ${isVisible ? 'visible' : ''}`}
+          position="relative"
+        >
+          <MobileContentThird />
+        </Box>
+        <Box className={`animated-heading-right ${isVisible ? 'visible' : ''}`}>
+          <MobileContentFourth />
+        </Box>
+        <Box
+          className={`animated-heading-left ${isVisible ? 'visible' : ''}`}
+          position="relative"
+        >
+          <MobileContentSixth />
+        </Box>
+        <Box className={`animated-heading-right ${isVisible ? 'visible' : ''}`}>
+          <MobileContentSeventh />
+        </Box>
+        <Box
+          className={`animated-heading-left ${isVisible ? 'visible' : ''}`}
+          position="relative"
+        >
+          <MobileContentEigth />
+        </Box>
+        <Box className={`animated-heading-right ${isVisible ? 'visible' : ''}`}>
+          <MobileContentNineth />
+        </Box>
+        <Box
+          className={`animated-heading-left ${isVisible ? 'visible' : ''}`}
+          position="relative"
+        >
+          <MobileContentTenth />
         </Box>
       </Flex>
     </Box>
