@@ -63,9 +63,13 @@ export const Footer = () => {
               maxW={{ base: '100%', xl: rem(813) }}
             >
               <Flex position="relative">
-                <Box height={{ base: rem(80), sm: rem(100), lg: rem(140) }}>
+                <Flex
+                  height={{ base: rem(80), sm: rem(100), lg: rem(140) }}
+                  width="100%"
+                  justifyContent="flex-start"
+                >
                   <ContactEn />
-                </Box>
+                </Flex>
                 <Box
                   position="absolute"
                   top="calc(50% - 14px)"

@@ -1,6 +1,6 @@
 export const NameMobileEn = () => (
   <svg
-    width="auto"
+    width="100%"
     height="100%"
     viewBox="0 0 168 51"
     fill="none"

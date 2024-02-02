@@ -91,7 +91,8 @@ const VideoReference = ({
         autoPlay={false}
         muted
         loop
-        src={videoUrl}
+        preload="metadata"
+        src={`${videoUrl}#t=0.001`}
         style={{
           width: '100%',
           height: '100%',

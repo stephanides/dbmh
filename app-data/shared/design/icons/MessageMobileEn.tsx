@@ -1,6 +1,6 @@
 export const MessageMobileEn = () => (
   <svg
-    width="auto"
+    width="100%"
     height="100%"
     viewBox="0 0 302 53"
     fill="none"

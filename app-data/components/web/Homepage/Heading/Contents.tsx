@@ -1,7 +1,7 @@
 export const ContentFirst = () => (
   <svg
     width="100%"
-    height="auto"
+    height="100%"
     viewBox="0 0 1818 127"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -80,7 +80,7 @@ export const ContentFirst = () => (
 export const ContentSecond = () => (
   <svg
     width="100%"
-    height="auto"
+    height="100%"
     viewBox="0 0 1823 128"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -159,7 +159,7 @@ export const ContentSecond = () => (
 export const ContentThird = () => (
   <svg
     width="100%"
-    height="auto"
+    height="100%"
     viewBox="0 0 1810 128"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -238,7 +238,7 @@ export const ContentThird = () => (
 export const ContentFourth = () => (
   <svg
     width="100%"
-    height="auto"
+    height="100%"
     viewBox="0 0 1819 128"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -317,7 +317,7 @@ export const ContentFourth = () => (
 export const ContentFifth = () => (
   <svg
     width="100%"
-    height="auto"
+    height="100%"
     viewBox="0 0 1813 126"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -396,7 +396,7 @@ export const ContentFifth = () => (
 export const ContentSixth = () => (
   <svg
     width="100%"
-    height="auto"
+    height="100%"
     viewBox="0 0 1818 127"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router';
 
-import React, { useRef, useState } from 'react';
-import { useTranslation } from 'next-i18next';
+import React from 'react';
 import Link from 'next/link';
 import { Logo } from '../Logo';
 import {
@@ -12,14 +11,14 @@ import {
   media,
 } from '../../design';
 import styled from 'styled-components';
-import { Box, Flex, Text, useOutsideClick } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import { rem } from 'polished';
 import { HeadingText } from './HeadingText';
 
 export const SOCIAL_LINKS = {
-  fb: 'https://google.sk',
-  ig: 'https://google.sk',
-  in: 'https://google.sk',
+  fb: 'https://www.facebook.com/daybymemediahouse',
+  ig: 'https://www.instagram.com/daybymemediahouse/',
+  in: 'https://www.linkedin.com/company/daybyme/about',
 };
 
 type NavigationProps = {
@@ -31,12 +30,6 @@ export const Navigation = ({
   isSticky = false,
   toggleMobile,
 }: NavigationProps) => {
-  const router = useRouter();
-  const { i18n } = useTranslation(['layout']);
-  const lang = i18n.language ?? 'en';
-  const isEnglish = lang === 'en';
-  const { query } = router;
-
   return (
     <Box
       mt={isSticky ? rem(52) : 0}
@@ -77,12 +70,12 @@ export const Navigation = ({
           )}
         </Flex>
         <Flex columnGap={rem(25)} alignItems="center" pointerEvents="all">
-          <Link href={{ pathname: '', query: { ...query } }} locale="en">
+          {/* <Link href={{ pathname: '', query: { ...query } }} locale="en">
             <LangItem active={isEnglish}>ENG</LangItem>
           </Link>
           <Link href={{ pathname: '', query: { ...query } }} locale="sk">
             <LangItem active={!isEnglish}>SK</LangItem>
-          </Link>
+          </Link> */}
           <Box onClick={toggleMobile} cursor="pointer">
             <Hamburger />
           </Box>

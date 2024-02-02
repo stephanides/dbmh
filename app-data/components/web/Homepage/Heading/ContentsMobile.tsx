@@ -1,7 +1,7 @@
 export const ContentTop = () => (
   <svg
     width="100%"
-    height="auto"
+    height="100%"
     viewBox="0 0 322 42"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +48,7 @@ export const ContentTop = () => (
 export const ContentUnderTop = () => (
   <svg
     width="100%"
-    height="auto"
+    height="100%"
     viewBox="0 0 318 43"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -95,7 +95,7 @@ export const ContentUnderTop = () => (
 export const ContentFirst = () => (
   <svg
     width="100%"
-    height="auto"
+    height="100%"
     viewBox="0 0 323 43"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -142,7 +142,7 @@ export const ContentFirst = () => (
 export const ContentSecond = () => (
   <svg
     width="100%"
-    height="auto"
+    height="100%"
     viewBox="0 0 318 43"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -189,7 +189,7 @@ export const ContentSecond = () => (
 export const ContentThird = () => (
   <svg
     width="100%"
-    height="auto"
+    height="100%"
     viewBox="0 0 320 43"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -236,7 +236,7 @@ export const ContentThird = () => (
 export const ContentFourth = () => (
   <svg
     width="100%"
-    height="auto"
+    height="100%"
     viewBox="0 0 318 43"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -283,7 +283,7 @@ export const ContentFourth = () => (
 export const ContentSixth = () => (
   <svg
     width="100%"
-    height="auto"
+    height="100%"
     viewBox="0 0 318 43"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -330,7 +330,7 @@ export const ContentSixth = () => (
 export const ContentSeventh = () => (
   <svg
     width="100%"
-    height="auto"
+    height="100%"
     viewBox="0 0 323 43"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -377,7 +377,7 @@ export const ContentSeventh = () => (
 export const ContentEigth = () => (
   <svg
     width="100%"
-    height="auto"
+    height="100%"
     viewBox="0 0 318 42"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -424,7 +424,7 @@ export const ContentEigth = () => (
 export const ContentNineth = () => (
   <svg
     width="100%"
-    height="auto"
+    height="100%"
     viewBox="0 0 318 42"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -471,7 +471,7 @@ export const ContentNineth = () => (
 export const ContentTenth = () => (
   <svg
     width="100%"
-    height="auto"
+    height="100%"
     viewBox="0 0 320 44"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"

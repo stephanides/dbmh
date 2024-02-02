@@ -4,6 +4,7 @@ import { rem } from 'polished';
 import {
   FONT_FAMILY_FORMULA,
   FONT_FAMILY_MONO,
+  Mute,
   Unmute,
   colors,
   media,
@@ -33,7 +34,7 @@ export const PodcastSlide = ({
 
   useEffect(() => {
     // @ts-ignore
-    if (navigator.userActivation.hasBeenActive) {
+    if (audioRef) {
       if (audioRef.current && isActive) {
         audioRef.current.play();
 
@@ -136,7 +137,7 @@ export const PodcastSlide = ({
               <img src="/podcasts/wave.gif" alt="Wave" />
             </Box>
             <StyledButton onClick={handleMuteUnmute}>
-              <Unmute />
+              {isMuted ? <Unmute /> : <Mute />}
               <Text
                 fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
                 as="span"
@@ -144,6 +145,7 @@ export const PodcastSlide = ({
                 position="relative"
                 top={rem(2)}
                 display={{ base: 'none', lg: 'block' }}
+                ml={rem(8)}
               >
                 {isMuted ? 'UNMUTE' : 'MUTE'}
               </Text>

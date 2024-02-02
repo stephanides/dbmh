@@ -14,6 +14,7 @@ export * from './ContactEn';
 export * from './EmailMobileEn';
 export * from './MessageMobileEn';
 export * from './NameMobileEn';
+export * from './Mute';
 
 export type IconProps = {
   width?: string;

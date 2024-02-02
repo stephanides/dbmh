@@ -56,8 +56,18 @@ export const AboutUs = () => {
             <Text
               fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
               color="white"
-              fontSize={{ base: rem(26), md: rem(42), xl: rem(64) }}
-              lineHeight={{ base: rem(30), md: rem(48), xl: rem(72) }}
+              fontSize={{
+                base: rem(26),
+                md: rem(42),
+                xl: rem(48),
+                '3xl': rem(64),
+              }}
+              lineHeight={{
+                base: rem(30),
+                md: rem(48),
+                xl: rem(54),
+                '3xl': rem(72),
+              }}
               position="relative"
               zIndex={3}
             >
@@ -66,8 +76,18 @@ export const AboutUs = () => {
             <Text
               fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
               color="white"
-              fontSize={{ base: rem(26), md: rem(42), xl: rem(64) }}
-              lineHeight={{ base: rem(30), md: rem(48), xl: rem(72) }}
+              fontSize={{
+                base: rem(26),
+                md: rem(42),
+                xl: rem(48),
+                '3xl': rem(64),
+              }}
+              lineHeight={{
+                base: rem(30),
+                md: rem(48),
+                xl: rem(54),
+                '3xl': rem(72),
+              }}
               mt={rem(64)}
               position="relative"
               zIndex={3}

@@ -69,7 +69,7 @@ export const OtherNumbersCarousel = ({
   }, [lang]);
 
   return (
-    <Box width="100%" height={{ base: rem(600), md: '100%' }}>
+    <Box width="100%" height={{ base: 'auto', md: '100%' }}>
       <Swiper
         observer
         onSlideChange={(swiper) => {
@@ -106,12 +106,16 @@ export const OtherNumbersCarousel = ({
                 {slide.subtitle[lang]}
               </Text>
               <Flex
-                position="absolute"
+                position={{ base: 'relative', md: 'absolute' }}
                 bottom="0"
                 width="100%"
                 justifyContent="center"
               >
-                <Box maxWidth={{ base: rem(280), md: rem(200) }} width="100%">
+                <Box
+                  maxWidth={{ base: rem(280), md: rem(200) }}
+                  width="100%"
+                  mt={{ base: rem(36), md: 0 }}
+                >
                   <Image
                     src={slide.image}
                     width="0"
