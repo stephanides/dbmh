@@ -45,7 +45,10 @@ export const Footer = () => {
         >
           {t('footer:subtitle')}
         </Text>
-        <Flex mt={rem(102)} flexDir={{ base: 'column', xl: 'row' }}>
+        <Flex
+          mt={{ base: rem(60), xl: rem(102) }}
+          flexDir={{ base: 'column', xl: 'row' }}
+        >
           <Box
             width={{ base: '100%', xl: '50%' }}
             minWidth={{ base: 'auto', xl: rem(700) }}
@@ -56,6 +59,7 @@ export const Footer = () => {
             width={{ base: '100%', xl: '50%' }}
             justifyContent={{ base: 'center', xl: 'flex-end' }}
             mt={{ base: rem(124), xl: 0 }}
+            ml={{ base: 0, xl: rem(16) }}
           >
             <Box
               position="relative"
@@ -90,35 +94,143 @@ export const Footer = () => {
                 </Box>
               </Flex>
               <Flex
-                position="relative"
-                zIndex={1}
-                mt={rem(60)}
+                justifyContent="space-between"
                 flexDirection="column"
                 alignItems={{ base: 'flex-start', xl: 'flex-end' }}
               >
-                <Text
-                  fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                  fontSize={rem(28)}
-                  color="black"
-                  lineHeight={rem(32)}
-                  mt={rem(52)}
-                  textAlign="right"
+                <Flex
+                  position="relative"
+                  zIndex={1}
+                  top={{ base: rem(0), md: rem(-80) }}
+                  flexDirection="column"
                 >
-                  Grösslingova 52,
-                </Text>
-                <Text
-                  fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                  fontSize={rem(28)}
-                  color="black"
-                  lineHeight={rem(32)}
-                  textAlign="right"
+                  <Text
+                    fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
+                    fontSize={rem(28)}
+                    color="black"
+                    lineHeight={rem(32)}
+                    mt={rem(52)}
+                    textAlign={{ base: 'left', xl: 'right' }}
+                  >
+                    Office:
+                  </Text>
+                  <Text
+                    fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
+                    fontSize={rem(28)}
+                    color="black"
+                    lineHeight={rem(32)}
+                    textAlign={{ base: 'left', xl: 'right' }}
+                  >
+                    Galvaniho 19
+                  </Text>
+                  <Text
+                    fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
+                    fontSize={rem(28)}
+                    color="black"
+                    lineHeight={rem(32)}
+                    textAlign={{ base: 'left', xl: 'right' }}
+                  >
+                    Campus GBC V
+                  </Text>
+                  <Text
+                    fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
+                    fontSize={rem(28)}
+                    color="black"
+                    lineHeight={rem(32)}
+                    textAlign={{ base: 'left', xl: 'right' }}
+                  >
+                    821 04 Bratislava
+                  </Text>
+                  <a href="mailto:hi@daybyme.com">
+                    <Text
+                      fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
+                      fontSize={rem(28)}
+                      color="black"
+                      lineHeight={rem(32)}
+                      textAlign={{ base: 'left', xl: 'right' }}
+                      textDecoration="underline"
+                    >
+                      hi@daybyme.com
+                    </Text>
+                  </a>
+                </Flex>
+                <Flex
+                  position="relative"
+                  zIndex={1}
+                  top={{ base: rem(0), md: rem(-80) }}
+                  flexDirection="column"
                 >
-                  811 09 Bratislava -
-                </Text>
+                  <Text
+                    fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
+                    fontSize={rem(28)}
+                    color="black"
+                    lineHeight={rem(32)}
+                    mt={rem(52)}
+                    textAlign={{ base: 'left', xl: 'right' }}
+                  >
+                    Invoice details:
+                  </Text>
+                  <Text
+                    fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
+                    fontSize={rem(28)}
+                    color="black"
+                    lineHeight={rem(32)}
+                    textAlign={{ base: 'left', xl: 'right' }}
+                  >
+                    Daybyme Media House s.r.o.
+                  </Text>
+                  <Text
+                    fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
+                    fontSize={rem(28)}
+                    color="black"
+                    lineHeight={rem(32)}
+                    textAlign={{ base: 'left', xl: 'right' }}
+                  >
+                    Grösslingova 52 c
+                  </Text>
+                  <Text
+                    fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
+                    fontSize={rem(28)}
+                    color="black"
+                    lineHeight={rem(32)}
+                    textAlign={{ base: 'left', xl: 'right' }}
+                  >
+                    811 09 Bratislava
+                  </Text>
+                  <Text
+                    fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
+                    fontSize={rem(28)}
+                    color="black"
+                    lineHeight={rem(32)}
+                    textAlign={{ base: 'left', xl: 'right' }}
+                  >
+                    Slovak Republic
+                  </Text>
+                  <Text
+                    fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
+                    fontSize={rem(28)}
+                    color="black"
+                    lineHeight={rem(32)}
+                    textAlign={{ base: 'left', xl: 'right' }}
+                  >
+                    ID: 50409760
+                  </Text>
+                  <Text
+                    fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
+                    fontSize={rem(28)}
+                    color="black"
+                    lineHeight={rem(32)}
+                    textAlign={{ base: 'left', xl: 'right' }}
+                  >
+                    VAT ID: SK2120332467
+                  </Text>
+                </Flex>
               </Flex>
+
               <Flex
                 columnGap={{ base: rem(24), xl: rem(8) }}
-                mt={rem(52)}
+                position="relative"
+                top={{ base: rem(40), md: rem(-32) }}
                 justifyContent={{ base: 'flex-start', xl: 'flex-end' }}
               >
                 <a href={SOCIAL_LINKS.fb} target="_blank">
@@ -132,8 +244,8 @@ export const Footer = () => {
                 </a>
               </Flex>
               <Box
-                position={{ base: 'relative', xl: 'absolute' }}
-                bottom={0}
+                position={{ base: 'relative', xl: 'relative' }}
+                mt={rem(20)}
                 width="100%"
               >
                 <Flex

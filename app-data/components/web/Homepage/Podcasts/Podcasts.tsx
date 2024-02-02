@@ -40,7 +40,7 @@ const SLIDES = [
     title: 'followers',
     href: 'https://podcasts.apple.com/sk/podcast/pre%C4%8Do-spolupracova%C5%A5-s-mikroinfluencermi-daniel-%C4%8Da%C4%8Dala/id1551746459?i=1000630921517',
     avatar: '/images/podcasts/1/avatar.png',
-    logo: '/images/podcasts/1/logo.jpg',
+    logo: '/images/podcasts/3/logo.jpg',
     podcast_example: '/podcasts/tony.mp3',
   },
   {
@@ -54,7 +54,7 @@ const SLIDES = [
     title: 'followers',
     href: 'https://podcasts.apple.com/sk/podcast/startitup-podcasty/id1446070403?i=1000630725238',
     avatar: '/images/podcasts/1/avatar.png',
-    logo: '/images/podcasts/1/logo.jpg',
+    logo: '/images/podcasts/2/logo.jpg',
     podcast_example: '/podcasts/startitup.mp3',
   },
   {

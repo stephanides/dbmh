@@ -6,54 +6,6 @@ import Contact from '../../../../db/models/Contact';
 import { validateHuman } from '../../utils';
 import ModError from '../../utils/error';
 
-// const orderCreatedTemplate = fs.readFileSync(
-//   path.join(__dirname, '../../../../../public/email/order.html'),
-//   'utf8'
-// );
-
-// function sendClientMailNotification(orderData: any): Promise<void> {
-//   return new Promise(async (resolve, reject) => {
-//     try {
-//       // create reusable transporter object using the default SMTP transport
-//       let transporter = nodemailer.createTransport({
-//         host: process.env.EMAIL_HOST,
-//         port: 587, // 587,
-//         secure: false, // true, // ssl
-//         auth: {
-//           user: process.env.EMAIL_LOGIN, // generated ethereal user
-//           pass: process.env.EMAIL_PASS, // generated ethereal password
-//         },
-//       });
-//       const templateOrderMail = Handlebars.compile(orderCreatedTemplate);
-//       var replacement = {
-//         client: orderData.client,
-//         email: orderData.email,
-//         phone: orderData.phone ?? '-',
-//         note: orderData.note,
-//         passengers: orderData.passengers ?? '-',
-//         dateFrom: orderData.dateFrom ?? '',
-//         dateTo: orderData.dateTo ?? '',
-//       };
-
-//       console.log('replacement', replacement);
-
-//       const orderMailToSend = templateOrderMail(replacement);
-
-//       // send mail with defined transport object
-//       await transporter.sendMail({
-//         from: '"Fermo - správny partner pre Vašu cestu" <info@fermo.sk>',
-//         to: orderData.email, // list of receivers
-//         subject: 'Ďakujeme za vašu objednávku.', // Subject line
-//         html: orderMailToSend, // html body
-//       });
-
-//       resolve();
-//     } catch (err) {
-//       reject(err);
-//     }
-//   });
-// }
-
 function sendInfoMailNotification(data: any): Promise<void> {
   return new Promise(async (resolve, reject) => {
     try {

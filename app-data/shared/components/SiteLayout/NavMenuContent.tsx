@@ -80,7 +80,7 @@ export const NavMenuContent = ({
   return (
     <MobileNavContent
       py={{ base: rem(24), '3xl': rem(38) }}
-      px={rem(56)}
+      px={{ base: rem(24), md: rem(56) }}
       mobileOpen={isOpen}
       ref={menuContentRef}
     >

@@ -13,10 +13,12 @@ import { setContext } from '@apollo/client/link/context';
 import { ReactNode } from 'react';
 
 const domain: string =
-  process.env.NODE_ENV === 'production' ? 'daybymemediahouse.com' : 'localhost'; // change this to domain
+  process.env.NODE_ENV === 'production'
+    ? 'v1.daybymemediahouse.com'
+    : 'localhost'; // change this to domain
 const protocol: string =
   process.env.NODE_ENV === 'production' ? 'https' : 'http'; // change this to https
-const port = Number(process.env.PORT) || 3078;
+const port = Number(process.env.PORT) || 3336;
 export const API_URL: string =
   process.env.NODE_ENV === 'production'
     ? `${protocol}://${domain}/api`

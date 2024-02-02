@@ -49,10 +49,32 @@ function App({ Component, pageProps }: AppProps) {
     }
   }, []);
 
+  const { meta } = pageProps;
+
   return (
     <>
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/images/favicon.ico" />
+
+        <title>
+          {meta?.title
+            ? `Daybyme Media House - ${meta.title}`
+            : 'Daybyme Media House - Digital-first marketing agency'}
+        </title>
+
+        <meta
+          name="description"
+          content={
+            meta?.description ??
+            `We handle everything from looking over a brand’s social media, coming up with fresh ideas, creating content, managing campaigns and end-to-end influencer campaigns that drive real results. We don't just deliver. We are always ready to go the extra mile. Based in Bratislava, operating worldwide.`
+          }
+        />
+
+        <meta
+          property="og:image"
+          content={meta?.image ?? '/images/daybymemediahouse.png'}
+        />
+
         <link href="/fonts/style.css" rel="stylesheet" />
         {/* Use minimum-scale=1 to enable GPU rasterization */}
         <meta

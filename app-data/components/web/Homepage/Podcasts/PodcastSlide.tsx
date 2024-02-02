@@ -62,8 +62,10 @@ export const PodcastSlide = ({
         minWidth={{ lg: rem(200), xl: rem(315) }}
         width={{ base: '100%', lg: rem(200), xl: rem(315) }}
         flexDir={{ base: 'row', lg: 'column' }}
-        alignItems={'flex-start'}
+        alignItems="center"
         justifyContent={{ base: 'center', lg: 'flex-start' }}
+        mt={rem(18)}
+        mb={{ base: rem(60), lg: 0 }}
       >
         <Image
           src={podcast.logo}
@@ -88,9 +90,8 @@ export const PodcastSlide = ({
           color="white"
           fontFamily={FONT_FAMILY_MONO}
           fontWeight={500}
-          mt={rem(18)}
-          mb={{ base: rem(60), lg: 0 }}
           ml={{ base: rem(14), lg: 0 }}
+          mt={{ base: 0, lg: rem(16) }}
           dangerouslySetInnerHTML={{ __html: podcast.company }}
         />
       </Flex>

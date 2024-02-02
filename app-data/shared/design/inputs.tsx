@@ -14,14 +14,14 @@ export const StyledInput = styled(Input)`
   color: black !important;
   font-family: ${FONT_FAMILY_MONO.REGULAR};
   font-weight: 700;
-  font-size: ${rem(60)} !important;
+  font-size: ${rem(52)} !important;
   position: relative;
   ::placeholder {
     font-family: ${FONT_FAMILY_MONO.REGULAR};
     font-weight: 700;
     color: white;
-    font-size: ${rem(60)};
-    line-height: ${rem(60)};
+    font-size: ${rem(52)};
+    line-height: ${rem(52)};
     ${media.down.md} {
       font-size: ${rem(32)} !important;
       line-height: ${rem(32)} !important;
@@ -60,7 +60,9 @@ export const StyledTextArea = styled(Textarea)`
   font-family: ${FONT_FAMILY_MONO.REGULAR};
   font-weight: 700;
   font-size: ${rem(60)} !important;
-  top: 30px;
+  line-height: ${rem(60)} !important;
+  white-space: nowrap;
+
   position: relative;
   ::placeholder {
     font-family: ${FONT_FAMILY_MONO.REGULAR};
@@ -87,16 +89,14 @@ export const StyledTextArea = styled(Textarea)`
   &:not(:placeholder-shown) {
     color: black !important;
   }
-  ${media.down.lg} {
-    top: 12px;
-  }
+
   ${media.down.md} {
     font-size: ${rem(32)} !important;
-    top: 24px;
+    line-height: ${rem(32)} !important;
   }
   ${media.down.sm} {
     font-size: ${rem(24)} !important;
-    top: 6px;
+    line-height: ${rem(24)} !important;
   }
 `;
 

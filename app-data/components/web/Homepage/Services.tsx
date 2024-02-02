@@ -40,7 +40,7 @@ const ServicesItem = ({
         fontSize={{ base: rem(16), xl: rem(22) }}
         fontFamily={FONT_FAMILY_FORMULA.MEDIUM}
         mt={rem(22)}
-        mb={{ base: rem(56), lg: rem(75) }}
+        mb={{ base: rem(32), md: rem(56), lg: rem(75) }}
         maxWidth={rem(332)}
       >
         <Trans i18nKey={text} />
