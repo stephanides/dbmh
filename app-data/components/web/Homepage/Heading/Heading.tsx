@@ -1,4 +1,5 @@
 import { Box, Flex } from '@chakra-ui/react';
+import { scroller } from 'react-scroll';
 import {
   ContentFifth,
   ContentFirst,
@@ -23,6 +24,8 @@ import {
 import { rem } from 'polished';
 import { useEffect, useState } from 'react';
 import { HeadingImage } from './HeadingImage';
+import { ScrollDown } from '../../../../shared/design';
+import { useRouter } from 'next/router';
 
 const IMAGES = [
   { src: '/images/heading/1_1.jpg', alt: '' },
@@ -38,6 +41,20 @@ const IMAGES2 = [
 
 export const Heading = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const router = useRouter();
+
+  const handleScrollToContent = (content: string) => {
+    if (router.pathname !== '/') {
+      router.push(`/#${content}`);
+    } else {
+      scroller.scrollTo(content, {
+        duration: 700,
+        delay: 50,
+        smooth: true,
+        offset: -20,
+      });
+    }
+  };
 
   useEffect(() => {
     // Trigger animation with a small delay
@@ -53,6 +70,7 @@ export const Heading = () => {
       pl={{ base: rem(20), lg: rem(56) }}
       pr={{ base: rem(20), lg: rem(46) }}
       pt={{ base: rem(100), md: rem(120), lg: 0 }}
+      position="relative"
     >
       <Flex
         rowGap={{ base: rem(12), '3xl': rem(20) }}
@@ -142,6 +160,16 @@ export const Heading = () => {
           <MobileContentTenth />
         </Box>
       </Flex>
+      <Box
+        position="absolute"
+        right="72px"
+        top="calc(50% - 116px)"
+        display={{ base: 'none', lg: 'flex' }}
+        cursor="pointer"
+        onClick={() => handleScrollToContent('highlights')}
+      >
+        <ScrollDown />
+      </Box>
     </Box>
   );
 };

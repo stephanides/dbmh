@@ -3,7 +3,6 @@ import { scroller } from 'react-scroll';
 import { MenuItem, MobileNavContent } from './style';
 import { Box, Flex } from '@chakra-ui/react';
 import { Close, LogoFull } from '../../design';
-import Link from 'next/link';
 import { useTranslation } from 'react-i18next';
 import { SOCIAL_LINKS, SocialLink } from './Navigation';
 import { useRouter } from 'next/router';

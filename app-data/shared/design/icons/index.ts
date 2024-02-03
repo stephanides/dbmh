@@ -18,6 +18,7 @@ export * from './Mute';
 export * from './Error';
 export * from './Thanks';
 export * from './ErrorMessage';
+export * from './ScrollDown';
 
 export type IconProps = {
   width?: string;
