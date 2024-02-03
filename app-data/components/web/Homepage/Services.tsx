@@ -28,8 +28,8 @@ const ServicesItem = ({
     <Box>
       <Text
         fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-        fontSize={{ base: rem(36), xl: rem(52) }}
-        lineHeight={{ base: rem(40), xl: rem(72) }}
+        fontSize={{ base: rem(24), lg: rem(36), xl: rem(52) }}
+        lineHeight={{ base: rem(28), lg: rem(40), xl: rem(72) }}
         color={colors.primary}
         textTransform="capitalize"
       >

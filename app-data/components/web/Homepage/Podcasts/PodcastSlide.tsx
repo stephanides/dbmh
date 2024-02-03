@@ -55,14 +55,14 @@ export const PodcastSlide = ({
       flexDir={{ base: 'column', lg: 'row' }}
       backgroundColor="#151515"
       borderRadius={rem(20)}
-      py={rem(64)}
+      py={{ base: rem(24), lg: rem(64) }}
       px={{ base: rem(32), lg: rem(75) }}
     >
       <Flex
         minWidth={{ lg: rem(200), xl: rem(315) }}
         width={{ base: '100%', lg: rem(200), xl: rem(315) }}
         flexDir={{ base: 'row', lg: 'column' }}
-        alignItems="center"
+        alignItems={{ base: 'center', lg: 'flex-start' }}
         justifyContent={{ base: 'center', lg: 'flex-start' }}
         mt={rem(18)}
         mb={{ base: rem(60), lg: 0 }}

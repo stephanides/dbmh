@@ -31,7 +31,7 @@ export type Podcast = {
 const SLIDES = [
   {
     index: 0,
-    name: 'Tony',
+    name: 'Dany Čačala',
     company: 'Tony',
     description: {
       sk: 'Celé to začalo v roku 2013 vytvorením známych facebookových a instagramových značiek @dnes_nosím, @dnes_jem, @dnes_cestujem a ostatných, kde sme v priebehu nasledujúcich rokov organicky nabrali vysoké státisíce ľudí, až sme sa dostali k méte jedného milióna sledovateľov…',
@@ -45,7 +45,7 @@ const SLIDES = [
   },
   {
     index: 1,
-    name: 'STU',
+    name: 'Dany Čačala',
     company: 'STU',
     description: {
       sk: 'Čiže to znamená v realite tak, že tá firma príde s nejakým briefom, vy ten brief následne rozošlete tým microinfluencerom, ktorí by sa mali podieľať na tej kampani a na základe toho potom oni tvoria ten content? Len trošičku upresním. Agentúra alebo značka...',
@@ -59,7 +59,7 @@ const SLIDES = [
   },
   {
     index: 2,
-    name: 'Buzzworld',
+    name: 'Dany Čačala',
     company: 'Buzzworld<br /> by Gabo & Peťo',
     description: {
       sk: 'To, čo hovoríš, je brutálne zaujímavé. Čo som si uvedomil pri tejto kampani, že ty vlastne cez tých microinfluencerov ako keby targetuješ, microtargetuješ a cieliš. Že vlastne vieš bežne využívať cielenie cez výber toho konkrétneho influencera. Áno, áno, ty hľadáš veľmi malé bubliny, ktoré vložíš do veľkej bubliny a tuto sme sa bavili o ľuďoch, ktorí majú…',
