@@ -54,7 +54,7 @@ const StatementItem = ({
         justifyContent={{ base: 'flex-start', lg: 'flex-end' }}
         flexDir="column"
         pt={rem(40)}
-        opacity={isActive ? '1' : '.4'}
+        opacity={isActive ? '1' : '0'}
         transform={isActive ? 'translateX(0)' : 'translateX(40%)'}
         transition="all 1s ease-out"
         position="relative"
@@ -158,7 +158,7 @@ export const Statements = () => {
   };
 
   return (
-    <Element name='highlights'>
+    <Element name="highlights">
       <Box
         pt={{ base: rem(100), lg: rem(200) }}
         pr={{ base: rem(40), lg: rem(72) }}

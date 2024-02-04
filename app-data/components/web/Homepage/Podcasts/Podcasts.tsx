@@ -88,7 +88,7 @@ export const Podcasts = () => {
     <Box
       position="relative"
       mx={{ base: rem(28), lg: rem(72), '3xl': rem(190) }}
-      mb={rem(198)}
+      mb={{ base: rem(120), lg: rem(198) }}
     >
       <Swiper
         observer

@@ -108,12 +108,6 @@ export const Heading = () => {
         flexDirection="column"
         display={{ base: 'flex', lg: 'none' }}
       >
-        <Box
-          className={`animated-heading-left ${isVisible ? 'visible' : ''}`}
-          position="relative"
-        >
-          <ContentTop />
-        </Box>
         <Box className={`animated-heading-right ${isVisible ? 'visible' : ''}`}>
           <ContentUnderTop />
         </Box>

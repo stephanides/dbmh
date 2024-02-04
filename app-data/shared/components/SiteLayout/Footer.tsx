@@ -58,7 +58,7 @@ export const Footer = () => {
           <Flex
             width={{ base: '100%', xl: '50%' }}
             justifyContent={{ base: 'center', xl: 'flex-end' }}
-            mt={{ base: rem(124), xl: 0 }}
+            mt={{ base: rem(80), xl: 0 }}
             ml={{ base: 0, xl: rem(16) }}
           >
             <Box
@@ -106,9 +106,9 @@ export const Footer = () => {
                 >
                   <Text
                     fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                    fontSize={rem(28)}
+                    fontSize={{ base: rem(24), md: rem(28) }}
                     color="black"
-                    lineHeight={rem(32)}
+                    lineHeight={{ base: rem(28), md: rem(32) }}
                     mt={rem(52)}
                     textAlign={{ base: 'left', xl: 'right' }}
                   >
@@ -116,27 +116,27 @@ export const Footer = () => {
                   </Text>
                   <Text
                     fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                    fontSize={rem(28)}
+                    fontSize={{ base: rem(24), md: rem(28) }}
                     color="black"
-                    lineHeight={rem(32)}
+                    lineHeight={{ base: rem(28), md: rem(32) }}
                     textAlign={{ base: 'left', xl: 'right' }}
                   >
                     Galvaniho 19
                   </Text>
                   <Text
                     fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                    fontSize={rem(28)}
+                    fontSize={{ base: rem(24), md: rem(28) }}
                     color="black"
-                    lineHeight={rem(32)}
+                    lineHeight={{ base: rem(28), md: rem(32) }}
                     textAlign={{ base: 'left', xl: 'right' }}
                   >
                     Campus GBC V
                   </Text>
                   <Text
                     fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                    fontSize={rem(28)}
+                    fontSize={{ base: rem(24), md: rem(28) }}
                     color="black"
-                    lineHeight={rem(32)}
+                    lineHeight={{ base: rem(28), md: rem(32) }}
                     textAlign={{ base: 'left', xl: 'right' }}
                   >
                     821 04 Bratislava
@@ -144,9 +144,9 @@ export const Footer = () => {
                   <a href="mailto:hi@daybyme.com">
                     <Text
                       fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                      fontSize={rem(28)}
+                      fontSize={{ base: rem(24), md: rem(28) }}
                       color="black"
-                      lineHeight={rem(32)}
+                      lineHeight={{ base: rem(28), md: rem(32) }}
                       textAlign={{ base: 'left', xl: 'right' }}
                       textDecoration="underline"
                     >
@@ -162,9 +162,9 @@ export const Footer = () => {
                 >
                   <Text
                     fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                    fontSize={rem(28)}
+                    fontSize={{ base: rem(24), md: rem(28) }}
                     color="black"
-                    lineHeight={rem(32)}
+                    lineHeight={{ base: rem(28), md: rem(32) }}
                     mt={rem(52)}
                     textAlign={{ base: 'left', xl: 'right' }}
                   >
@@ -172,54 +172,54 @@ export const Footer = () => {
                   </Text>
                   <Text
                     fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                    fontSize={rem(28)}
+                    fontSize={{ base: rem(24), md: rem(28) }}
                     color="black"
-                    lineHeight={rem(32)}
+                    lineHeight={{ base: rem(28), md: rem(32) }}
                     textAlign={{ base: 'left', xl: 'right' }}
                   >
                     Daybyme Media House s.r.o.
                   </Text>
                   <Text
                     fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                    fontSize={rem(28)}
+                    fontSize={{ base: rem(24), md: rem(28) }}
                     color="black"
-                    lineHeight={rem(32)}
+                    lineHeight={{ base: rem(28), md: rem(32) }}
                     textAlign={{ base: 'left', xl: 'right' }}
                   >
                     Grösslingova 52 c
                   </Text>
                   <Text
                     fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                    fontSize={rem(28)}
+                    fontSize={{ base: rem(24), md: rem(28) }}
                     color="black"
-                    lineHeight={rem(32)}
+                    lineHeight={{ base: rem(28), md: rem(32) }}
                     textAlign={{ base: 'left', xl: 'right' }}
                   >
                     811 09 Bratislava
                   </Text>
                   <Text
                     fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                    fontSize={rem(28)}
+                    fontSize={{ base: rem(24), md: rem(28) }}
                     color="black"
-                    lineHeight={rem(32)}
+                    lineHeight={{ base: rem(28), md: rem(32) }}
                     textAlign={{ base: 'left', xl: 'right' }}
                   >
                     Slovak Republic
                   </Text>
                   <Text
                     fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                    fontSize={rem(28)}
+                    fontSize={{ base: rem(24), md: rem(28) }}
                     color="black"
-                    lineHeight={rem(32)}
+                    lineHeight={{ base: rem(28), md: rem(32) }}
                     textAlign={{ base: 'left', xl: 'right' }}
                   >
                     ID: 50409760
                   </Text>
                   <Text
                     fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-                    fontSize={rem(28)}
+                    fontSize={{ base: rem(24), md: rem(28) }}
                     color="black"
-                    lineHeight={rem(32)}
+                    lineHeight={{ base: rem(28), md: rem(32) }}
                     textAlign={{ base: 'left', xl: 'right' }}
                   >
                     VAT ID: SK2120332467

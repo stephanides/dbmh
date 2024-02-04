@@ -18,9 +18,9 @@ type SiteLayoutProps = {
 
 export const SiteLayout: FC<SiteLayoutProps> = (props) => {
   const {
-    title = 'Daybyme Media House - Digital-first marketing agency',
+    title = 'DBMH - Digital first marketing agency',
     currentUrl,
-    description = `We handle everything from looking over a brand’s social media, coming up with fresh ideas, creating content, managing campaigns and end-to-end influencer campaigns that drive real results. We don't just deliver. We are always ready to go the extra mile. Based in Bratislava, operating worldwide.`,
+    description = `The one you've been looking for.`,
     previewImage,
     withContact = true,
   } = props;
@@ -49,7 +49,7 @@ export const SiteLayout: FC<SiteLayoutProps> = (props) => {
               height: 600,
             },
           ],
-          site_name: 'Daybyme Media House - Digital-first marketing agency',
+          site_name: 'DBMH - Digital first marketing agency',
         }}
       />
       <Head>

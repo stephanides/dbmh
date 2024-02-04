@@ -58,21 +58,21 @@ function App({ Component, pageProps }: AppProps) {
 
         <title>
           {meta?.title
-            ? `Daybyme Media House - ${meta.title}`
-            : 'Daybyme Media House - Digital-first marketing agency'}
+            ? `DBMH - ${meta.title}`
+            : 'DBMH - Digital first marketing agency'}
         </title>
 
         <meta
           name="description"
           content={
             meta?.description ??
-            `We handle everything from looking over a brand’s social media, coming up with fresh ideas, creating content, managing campaigns and end-to-end influencer campaigns that drive real results. We don't just deliver. We are always ready to go the extra mile. Based in Bratislava, operating worldwide.`
+            `The one you've been looking for.`
           }
         />
 
         <meta
           property="og:image"
-          content={meta?.image ?? '/images/daybymemediahouse.png'}
+          content={meta?.image ?? '/images/daybyme-og.png'}
         />
 
         <link href="/fonts/style.css" rel="stylesheet" />
