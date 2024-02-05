@@ -32,7 +32,7 @@ const SLIDES = [
   {
     index: 0,
     name: 'Dany Čačala',
-    company: 'Tony',
+    company: 'Doba Digitálna by Tony Dúbravec',
     description: {
       sk: 'Celé to začalo v roku 2013 vytvorením známych facebookových a instagramových značiek @dnes_nosím, @dnes_jem, @dnes_cestujem a ostatných, kde sme v priebehu nasledujúcich rokov organicky nabrali vysoké státisíce ľudí, až sme sa dostali k méte jedného milióna sledovateľov…',
       en: 'Celé to začalo v roku 2013 vytvorením známych facebookových a instagramových značiek @dnes_nosím, @dnes_jem, @dnes_cestujem a ostatných, kde sme v priebehu nasledujúcich rokov organicky nabrali vysoké státisíce ľudí, až sme sa dostali k méte jedného milióna sledovateľov…',
@@ -46,7 +46,7 @@ const SLIDES = [
   {
     index: 1,
     name: 'Dany Čačala',
-    company: 'STU',
+    company: 'Startitup podcasty',
     description: {
       sk: 'Čiže to znamená v realite tak, že tá firma príde s nejakým briefom, vy ten brief následne rozošlete tým microinfluencerom, ktorí by sa mali podieľať na tej kampani a na základe toho potom oni tvoria ten content? Len trošičku upresním. Agentúra alebo značka...',
       en: 'Čiže to znamená v realite tak, že tá firma príde s nejakým briefom, vy ten brief následne rozošlete tým microinfluencerom, ktorí by sa mali podieľať na tej kampani a na základe toho potom oni tvoria ten content? Len trošičku upresním. Agentúra alebo značka…',

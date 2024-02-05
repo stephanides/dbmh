@@ -52,7 +52,7 @@ export const CounterCarousel = ({
     <Box
       border={`1px solid ${colors.border}`}
       borderRadius={rem(8)}
-      px={rem(40)}
+      px={{ base: rem(32), '3xl': rem(40) }}
       width="100%"
       height={rem(360)}
     >

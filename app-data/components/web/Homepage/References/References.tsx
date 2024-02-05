@@ -17,7 +17,6 @@ export const References = () => {
       <Box width="100%">
         <Box width="100%" height="100%" position="relative">
           <Swiper
-            observer
             tag={SwiperWrapper}
             slidesPerView={1}
             centeredSlides

@@ -25,7 +25,17 @@ const SLIDES = [
       en: 'Creating live content coverage for Bugatti social media with over 2,5M views and 230K interactions.',
       sk: 'Vytváranie živého pokrytia pre sociálne médiá Bugatti s viac ako 2,5 miliónmi zobrazení a 230 000 interakciami.',
     },
-    image: '/images/buggati.png',
+    image: '/images/bento/bugatti.png',
+  },
+  {
+    number: 10,
+    numberSufix: 'Bugatti SM',
+    title: 'Bugatti SM',
+    subtitle: {
+      en: 'Creating live content coverage for Bugatti social media with over 2,5M views and 230K interactions.',
+      sk: 'Vytváranie živého pokrytia pre sociálne médiá Bugatti s viac ako 2,5 miliónmi zobrazení a 230 000 interakciami.',
+    },
+    image: '/images/bento/bugatti_2.png',
   },
   {
     number: 1,
@@ -35,7 +45,7 @@ const SLIDES = [
       en: 'Delivering content for Rimac Automobili social media. ',
       sk: 'Poskytovanie obsahu pre sociálne médiá Rimac Automobili.',
     },
-    image: '/images/rimac.png',
+    image: '/images/bento/rimac.png',
   },
   {
     number: 1000,
@@ -45,13 +55,39 @@ const SLIDES = [
       en: 'Our team and content being internationally recognized by global brands (Porsche, BMW, Pagani).',
       sk: 'Náš tím a obsah sú medzinárodne uznávané svetovými značkami (Porsche, BMW, Pagani).',
     },
-    image: '/images/ir.png',
+    image: '/images/bento/bmw.png',
+  },
+  {
+    number: 1000,
+    numberSufix: 'Internationally recognized',
+    title: 'Internationally recognized',
+    subtitle: {
+      en: 'Our team and content being internationally recognized by global brands (Porsche, BMW, Pagani).',
+      sk: 'Náš tím a obsah sú medzinárodne uznávané svetovými značkami (Porsche, BMW, Pagani).',
+    },
+    image: '/images/bento/mercedes.png',
+  },
+  {
+    number: 1000,
+    numberSufix: 'Internationally recognized',
+    title: 'Internationally recognized',
+    subtitle: {
+      en: 'Our team and content being internationally recognized by global brands (Porsche, BMW, Pagani).',
+      sk: 'Náš tím a obsah sú medzinárodne uznávané svetovými značkami (Porsche, BMW, Pagani).',
+    },
+    image: '/images/bento/pagani.png',
+  },
+  {
+    number: 1000,
+    numberSufix: 'Internationally recognized',
+    title: 'Internationally recognized',
+    subtitle: {
+      en: 'Our team and content being internationally recognized by global brands (Porsche, BMW, Pagani).',
+      sk: 'Náš tím a obsah sú medzinárodne uznávané svetovými značkami (Porsche, BMW, Pagani).',
+    },
+    image: '/images/bento/porsche.png',
   },
 ];
-
-const AnimatedNumbers = dynamic(() => import('react-animated-numbers'), {
-  ssr: false,
-});
 
 type OtherNumbersCarouselProps = {
   classNameOverride: string;
@@ -69,7 +105,12 @@ export const OtherNumbersCarousel = ({
   }, [lang]);
 
   return (
-    <Box width="100%" height={{ base: 'auto', md: '100%' }}>
+    <Box
+      width="100%"
+      height={{ base: 'auto', md: '100%' }}
+      pt={{ base: rem(32), '3xl': rem(40) }}
+      px={rem(16)}
+    >
       <Swiper
         observer
         onSlideChange={(swiper) => {
@@ -87,7 +128,11 @@ export const OtherNumbersCarousel = ({
       >
         {SLIDES.map((slide, i) => (
           <SwiperSlide key={i}>
-            <Box height="100%" position="relative">
+            <Box
+              height="100%"
+              position="relative"
+              px={{ base: rem(16), '3xl': rem(24) }}
+            >
               <Text
                 fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
                 fontSize={{ base: rem(26), '3xl': rem(26) }}
@@ -108,12 +153,13 @@ export const OtherNumbersCarousel = ({
               <Flex
                 position={{ base: 'relative', md: 'absolute' }}
                 bottom="0"
+                left={0}
                 width="100%"
                 justifyContent="center"
               >
                 <Box
-                  maxWidth={{ base: rem(280), md: rem(200) }}
-                  width="100%"
+                  maxWidth={{ base: rem(280), md: rem(260) }}
+                  width={{ base: '75%' }}
                   mt={{ base: rem(36), md: 0 }}
                 >
                   <Image
@@ -185,7 +231,7 @@ const PaginationWrapper = styled.div`
   }
 `;
 
-const SwiperArrow = styled.div`
+const SwiperArrow = styled(Box)`
   position: relative;
   cursor: pointer;
 `;

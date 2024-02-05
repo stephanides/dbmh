@@ -94,7 +94,7 @@ export const TrustedBy = () => {
     <Box
       border={`1px solid ${colors.border}`}
       borderRadius={rem(8)}
-      py={rem(40)}
+      py={{ base: rem(32), '3xl': rem(40) }}
       height={{ base: rem(240), sm: '330px' }}
     >
       <Text

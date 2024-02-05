@@ -161,7 +161,6 @@ export const OurNumbers = () => {
               <Box
                 border={`1px solid ${colors.border}`}
                 borderRadius={rem(8)}
-                p={rem(40)}
                 pb={rem(0)}
                 width={{ base: '100%', md: 'calc(50% - 16px)' }}
                 height="100%"
@@ -173,7 +172,7 @@ export const OurNumbers = () => {
               <Box
                 border={`1px solid ${colors.border}`}
                 borderRadius={rem(8)}
-                p={rem(40)}
+                p={{ base: rem(32), '3xl': rem(40) }}
                 width={{ base: '100%', md: 'calc(50% - 16px)' }}
                 mr={{ base: 0, md: rem(16) }}
               >
