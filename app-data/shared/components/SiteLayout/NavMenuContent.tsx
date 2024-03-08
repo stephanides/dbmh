@@ -64,18 +64,6 @@ export const NavMenuContent = ({
     }
   };
 
-  const handleScrollToContentMobile = (content: string) => {
-    setIsOpen(false);
-    if (router.pathname !== '/') {
-      router.push(`/#${content}`);
-    }
-    scroller.scrollTo(content, {
-      duration: 700,
-      delay: 50,
-      smooth: true,
-      offset: 0,
-    });
-  };
   return (
     <MobileNavContent
       py={{ base: rem(24), '3xl': rem(38) }}

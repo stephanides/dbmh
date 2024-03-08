@@ -60,15 +60,6 @@ const StatementItem = ({
         position="relative"
       >
         <Text
-          fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-          color="white"
-          fontSize={rem(14)}
-          mb={rem(72)}
-          px={{ base: rem(32), lg: rem(147) }}
-        >
-          {preTitle}
-        </Text>
-        <Text
           maxW={rem(1600)}
           fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
           color="white"
@@ -160,7 +151,7 @@ export const Statements = () => {
   return (
     <Element name="highlights">
       <Box
-        pt={{ base: rem(100), lg: rem(200) }}
+        pt={{ base: rem(100), lg: rem(300) }}
         pr={{ base: rem(40), lg: rem(72) }}
         pl={{ base: 0, lg: rem(72) }}
       >

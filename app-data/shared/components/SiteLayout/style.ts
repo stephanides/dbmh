@@ -140,6 +140,10 @@ export const MobileNavContent = styled(Box)<MobileNavContent>`
   flex-direction: column;
   background-color: ${colors.primary};
   pointer-events: all;
+  ${media.down.xxxl} {
+    max-width: 520px;
+    right: ${({ mobileOpen }) => (mobileOpen ? 0 : '-520px')};
+  }
 `;
 
 export const MobileNavContentIconHolder = styled.div`
@@ -243,10 +247,16 @@ export const MenuItem = styled(Text)`
   font-size: ${rem(64)};
   color: white;
   cursor: pointer;
+  ${media.down.xxxl} {
+    font-size: ${rem(50)};
+  }
   ${media.down.xxl} {
     font-size: ${rem(42)};
   }
   ${media.down.lg} {
+    font-size: ${rem(46)};
+  }
+  @media (max-width: 400px) {
     font-size: ${rem(32)};
   }
 `;

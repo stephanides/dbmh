@@ -54,7 +54,7 @@ export const CounterCarousel = ({
       borderRadius={rem(8)}
       px={{ base: rem(32), '3xl': rem(40) }}
       width="100%"
-      height={rem(360)}
+      height={{ base: rem(400), lg: rem(360) }}
     >
       <Swiper
         observer
@@ -65,6 +65,7 @@ export const CounterCarousel = ({
         slidesPerView={1}
         speed={800}
         direction="horizontal"
+        spaceBetween={10}
         pagination={{
           el: `.pagination-bullet-${classNameOverride}`,
           clickable: true,
@@ -83,6 +84,7 @@ export const CounterCarousel = ({
                   fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
                   fontSize={rem(26)}
                   color={colors.primary}
+                  textTransform="uppercase"
                 >
                   <AnimatedNumbers
                     transitions={(index) => ({

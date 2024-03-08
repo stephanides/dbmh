@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Logo } from '../Logo';
 import {
@@ -30,58 +30,85 @@ export const Navigation = ({
   isSticky = false,
   toggleMobile,
 }: NavigationProps) => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <Box
-      mt={isSticky ? rem(52) : 0}
-      position={{ base: 'fixed', lg: isSticky ? 'sticky' : 'relative' }}
-      top={isSticky ? -1 : 0}
-      zIndex={99}
-      pointerEvents="none"
-      display={{ base: isSticky ? 'none' : 'block', lg: 'block' }}
-      width="100%"
-    >
-      <Flex
-        background={isSticky ? 'transparent' : colors.pageBackground}
-        height={{ base: rem(100), md: rem(120), lg: rem(166) }}
-        px={{ base: rem(28), lg: rem(72) }}
-        pt={{ base: 0, lg: rem(56) }}
-        justifyContent="space-between"
-        alignItems={{ base: 'center', lg: 'flex-start' }}
+    <>
+      <Box
+        position="fixed"
+        top={0}
+        zIndex={99}
+        pointerEvents="none"
+        width="100%"
       >
-        <Flex pointerEvents="all">
-          <Link href="/">
-            <Box mt={rem(6)}>
-              <Logo />
-            </Box>
-          </Link>
-          {!isSticky && (
-            <Flex display={{ base: 'none', md: 'flex' }}>
+        <Flex
+          background={colors.pageBackground}
+          transition="all 0.3s ease-out"
+          height={{
+            base: rem(100),
+            md: rem(scrolled ? 90 : 120),
+            lg: rem(scrolled ? 100 : 166),
+          }}
+          px={{ base: rem(28), lg: rem(72) }}
+          // pt={{ base: 0, lg: rem(56) }}
+          justifyContent="space-between"
+          alignItems={{ base: 'center' }}
+        >
+          <Flex pointerEvents="all" alignItems="center">
+            <Link href="/">
+              <Box mt={rem(6)} p={rem(4)}>
+                <Logo />
+              </Box>
+            </Link>
+
+            <Flex
+              display={{ base: 'none', md: 'flex' }}
+              transition="all .3s ease-out"
+              opacity={scrolled ? 0 : 1}
+            >
               <Box ml={rem(125)}>
                 <StyledHeadingText>DAYBYME</StyledHeadingText>
                 <StyledHeadingText>MEDIA</StyledHeadingText>
                 <StyledHeadingText>HOUSE</StyledHeadingText>
               </Box>
               <Box ml={rem(63)}>
-                <StyledHeadingText>FULLSERVIS</StyledHeadingText>
+                <StyledHeadingText>FULLSERVICE</StyledHeadingText>
                 <HeadingText />
                 <StyledHeadingText>AGENCY</StyledHeadingText>
               </Box>
             </Flex>
-          )}
-        </Flex>
-        <Flex columnGap={rem(25)} alignItems="center" pointerEvents="all">
-          {/* <Link href={{ pathname: '', query: { ...query } }} locale="en">
+          </Flex>
+          <Flex columnGap={rem(25)} alignItems="center" pointerEvents="all">
+            {/* <Link href={{ pathname: '', query: { ...query } }} locale="en">
             <LangItem active={isEnglish}>ENG</LangItem>
           </Link>
           <Link href={{ pathname: '', query: { ...query } }} locale="sk">
             <LangItem active={!isEnglish}>SK</LangItem>
           </Link> */}
-          <Box onClick={toggleMobile} cursor="pointer">
-            <Hamburger />
-          </Box>
+            <Box onClick={toggleMobile} cursor="pointer">
+              <Hamburger />
+            </Box>
+          </Flex>
         </Flex>
-      </Flex>
-    </Box>
+      </Box>
+    </>
   );
 };
 

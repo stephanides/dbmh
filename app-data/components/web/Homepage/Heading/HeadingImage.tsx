@@ -21,7 +21,7 @@ export const HeadingImage = ({ images }: HeadingImageProps) => {
       const newIndex = (currentIndex + 1) % images.length;
       setDisplayImage(images[newIndex]);
       setCurrentIndex(newIndex);
-    }, 1500); // 1000 milliseconds = 1 second
+    }, 3000); // 1000 milliseconds = 1 second
 
     // Clean up the interval when the component unmounts
     return () => clearInterval(intervalId);
@@ -32,7 +32,12 @@ export const HeadingImage = ({ images }: HeadingImageProps) => {
       width="0"
       height="0"
       sizes="100vw"
-      style={{ width: 'auto', height: '100%' }}
+      style={{
+        width: '173px',
+        height: '100%',
+        opacity: 0.5,
+        transition: 'all .3s ease-out',
+      }}
       alt={displayImage.alt}
     />
   );

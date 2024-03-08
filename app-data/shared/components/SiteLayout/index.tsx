@@ -4,8 +4,9 @@ import React, { FC, ReactNode, useRef, useState } from 'react';
 import { Navigation } from './Navigation';
 import { Footer } from './Footer';
 import { NavMenuContent } from './NavMenuContent';
-import { useOutsideClick } from '@chakra-ui/react';
+import { Box, useOutsideClick } from '@chakra-ui/react';
 import { Heading } from '../../../components/web/Homepage/Heading/Heading';
+import { rem } from 'polished';
 
 type SiteLayoutProps = {
   children: ReactNode;
@@ -59,10 +60,17 @@ export const SiteLayout: FC<SiteLayoutProps> = (props) => {
       </Head>
       <div style={{ minHeight: '50vh' }}>
         <Navigation toggleMobile={toggleMobile} />
-        <Heading />
-        <Navigation isSticky toggleMobile={toggleMobile} />
-        {props.children}
-        <Footer />
+        <Box
+          mt={{
+            base: rem(102),
+            md: rem(122),
+            lg: rem(168),
+          }}
+        >
+          <Heading />
+          {props.children}
+          <Footer />
+        </Box>
         <NavMenuContent
           isOpen={isMobileMenuOpen}
           setIsOpen={setIsMobileMenuOpen}

@@ -48,8 +48,8 @@ export const REFERENCE_ITEMS: ReferencesItemType[] = [
       'PPC CAMPAIGNS',
     ],
     title: {
-      sk: 'Torsus',
-      en: 'Torsus',
+      sk: 'TORSUS',
+      en: 'TORSUS',
     },
     description: {
       sk: 'TORSUS navrhuje, vyvíja a vyrába najodolnejšie terénne vozidlá na svete. Ako ich marketingová agentúra sme zapojení do každodenných interných procesov týkajúcich sa stratégií, tvorby obsahu, PR a výkonnostných kampaní.',
@@ -73,8 +73,8 @@ export const REFERENCE_ITEMS: ReferencesItemType[] = [
     ],
     labels: ['VIDEO PRODUCTION'],
     title: {
-      sk: 'Tomra',
-      en: 'Tomra',
+      sk: 'TOMRA',
+      en: 'TOMRA',
     },
     description: {
       sk: 'Slovensko sa stalo prvou krajinou v strednej Európe, ktorá zaviedla systém vrátenia záloh na nápojové obaly. Pre spoločnosť TOMRA (líder na trhu v oblasti recyklačných strojov) sme vytvorili video prípadovej štúdie pre predajnú komunikáciu v iných európskych krajinách.',

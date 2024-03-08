@@ -134,7 +134,12 @@ export const ContactForm = () => {
           {contactResult.isSuccess ? (
             <Box pb={{ base: 0, xl: rem(160) }}>
               <Flex position="relative">
-                <Flex width="100%" justifyContent="flex-start">
+                <Flex
+                  width="100%"
+                  justifyContent="flex-start"
+                  maxW={rem(781)}
+                  mr={rem(40)}
+                >
                   <Thanks />
                 </Flex>
                 <Box

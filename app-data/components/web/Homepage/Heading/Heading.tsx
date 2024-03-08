@@ -69,7 +69,6 @@ export const Heading = () => {
     <Box
       pl={{ base: rem(20), lg: rem(56) }}
       pr={{ base: rem(20), lg: rem(46) }}
-      pt={{ base: rem(100), md: rem(120), lg: 0 }}
       position="relative"
     >
       <Flex

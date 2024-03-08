@@ -103,6 +103,7 @@ export const TrustedBy = () => {
         fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
         fontSize={{ base: rem(26), '3xl': rem(26) }}
         color={colors.primary}
+        textTransform="uppercase"
       >
         Trusted by
       </Text>

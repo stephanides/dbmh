@@ -32,16 +32,16 @@ const SLIDES = [
   {
     index: 0,
     name: 'Dany Čačala',
-    company: 'Doba Digitálna by Tony Dúbravec',
+    company: 'Buzzworld<br /> by Gabo & Peťo',
     description: {
-      sk: 'Celé to začalo v roku 2013 vytvorením známych facebookových a instagramových značiek @dnes_nosím, @dnes_jem, @dnes_cestujem a ostatných, kde sme v priebehu nasledujúcich rokov organicky nabrali vysoké státisíce ľudí, až sme sa dostali k méte jedného milióna sledovateľov…',
-      en: 'Celé to začalo v roku 2013 vytvorením známych facebookových a instagramových značiek @dnes_nosím, @dnes_jem, @dnes_cestujem a ostatných, kde sme v priebehu nasledujúcich rokov organicky nabrali vysoké státisíce ľudí, až sme sa dostali k méte jedného milióna sledovateľov…',
+      sk: 'To, čo hovoríš, je brutálne zaujímavé. Čo som si uvedomil pri tejto kampani, že ty vlastne cez tých microinfluencerov ako keby targetuješ, microtargetuješ a cieliš. Že vlastne vieš bežne využívať cielenie cez výber toho konkrétneho influencera. Áno, áno, ty hľadáš veľmi malé bubliny, ktoré vložíš do veľkej bubliny a tuto sme sa bavili o ľuďoch, ktorí majú…',
+      en: 'To, čo hovoríš, je brutálne zaujímavé. Čo som si uvedomil pri tejto kampani, že ty vlastne cez tých microinfluencerov ako keby targetuješ, microtargetuješ a cieliš. Že vlastne vieš bežne využívať cielenie cez výber toho konkrétneho influencera. Áno, áno, ty hľadáš veľmi malé bubliny, ktoré vložíš do veľkej bubliny a tuto sme sa bavili o ľuďoch, ktorí majú…',
     },
     title: 'followers',
-    href: 'https://podcasts.apple.com/sk/podcast/pre%C4%8Do-spolupracova%C5%A5-s-mikroinfluencermi-daniel-%C4%8Da%C4%8Dala/id1551746459?i=1000630921517',
+    href: 'https://podcasts.apple.com/sk/podcast/buzzworld-by-gabo-pe%C5%A5o/id1605497773?i=1000625472947',
     avatar: '/images/podcasts/1/avatar.png',
-    logo: '/images/podcasts/3/logo.jpg',
-    podcast_example: '/podcasts/tony.mp3',
+    logo: '/images/podcasts/1/logo.jpg',
+    podcast_example: '/podcasts/buzzworld.mp3',
   },
   {
     index: 1,
@@ -60,16 +60,16 @@ const SLIDES = [
   {
     index: 2,
     name: 'Dany Čačala',
-    company: 'Buzzworld<br /> by Gabo & Peťo',
+    company: 'Doba Digitálna by Tony Dúbravec',
     description: {
-      sk: 'To, čo hovoríš, je brutálne zaujímavé. Čo som si uvedomil pri tejto kampani, že ty vlastne cez tých microinfluencerov ako keby targetuješ, microtargetuješ a cieliš. Že vlastne vieš bežne využívať cielenie cez výber toho konkrétneho influencera. Áno, áno, ty hľadáš veľmi malé bubliny, ktoré vložíš do veľkej bubliny a tuto sme sa bavili o ľuďoch, ktorí majú…',
-      en: 'To, čo hovoríš, je brutálne zaujímavé. Čo som si uvedomil pri tejto kampani, že ty vlastne cez tých microinfluencerov ako keby targetuješ, microtargetuješ a cieliš. Že vlastne vieš bežne využívať cielenie cez výber toho konkrétneho influencera. Áno, áno, ty hľadáš veľmi malé bubliny, ktoré vložíš do veľkej bubliny a tuto sme sa bavili o ľuďoch, ktorí majú…',
+      sk: 'Celé to začalo v roku 2013 vytvorením známych facebookových a instagramových značiek @dnes_nosím, @dnes_jem, @dnes_cestujem a ostatných, kde sme v priebehu nasledujúcich rokov organicky nabrali vysoké státisíce ľudí, až sme sa dostali k méte jedného milióna sledovateľov…',
+      en: 'Celé to začalo v roku 2013 vytvorením známych facebookových a instagramových značiek @dnes_nosím, @dnes_jem, @dnes_cestujem a ostatných, kde sme v priebehu nasledujúcich rokov organicky nabrali vysoké státisíce ľudí, až sme sa dostali k méte jedného milióna sledovateľov…',
     },
     title: 'followers',
-    href: 'https://podcasts.apple.com/sk/podcast/buzzworld-by-gabo-pe%C5%A5o/id1605497773?i=1000625472947',
+    href: 'https://podcasts.apple.com/sk/podcast/pre%C4%8Do-spolupracova%C5%A5-s-mikroinfluencermi-daniel-%C4%8Da%C4%8Dala/id1551746459?i=1000630921517',
     avatar: '/images/podcasts/1/avatar.png',
-    logo: '/images/podcasts/1/logo.jpg',
-    podcast_example: '/podcasts/buzzworld.mp3',
+    logo: '/images/podcasts/3/logo.jpg',
+    podcast_example: '/podcasts/tony.mp3',
   },
 ];
 

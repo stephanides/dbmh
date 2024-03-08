@@ -124,14 +124,14 @@ export const VideoReferences = () => {
             position="relative"
           >
             <VideoReference
-              videoUrl="/video/mementum.mp4"
+              videoUrl="/video/faces.mp4"
               title="Faces by Daybyme"
               text={
                 lang === 'en'
                   ? `Microinfluencers were engaged in our campaigns long before they became a trend. That's also why we are the ones setting the direction for influencer marketing in Slovakia. For over 10 years already.`
                   : 'Microinfluencerov sme zapájali do kampaní ešte predtým, ako sa z nich stal trend. Aj preto sme na Slovensku tí, ktorí udávajú smer influencer marketingu. Už 10 rokov.'
               }
-              logo="/images/video_ref/faces.png"
+              logo="/images/video_ref/faces.svg"
             />
           </Box>
           <Box
@@ -140,14 +140,14 @@ export const VideoReferences = () => {
             position="relative"
           >
             <VideoReference
-              videoUrl="/video/rally.mp4"
+              videoUrl="/video/ovm.mp4"
               title="OV MEDIA"
               text={
                 lang === 'en'
                   ? `OV MEDIA is a part of DBMH family with focus on creating engaging audiovisual content for clients from all over the world. From concept to full service production.`
                   : 'OV MEDIA je produkčná agentúra so zameraním na vytváranie pútavého audiovizuálneho obsahu pre klientov z celého sveta. Od konceptu po full service produkciu.'
               }
-              logo="/images/video_ref/ovmedia.png"
+              logo="/images/video_ref/ovmedia.svg"
             />
           </Box>
           <Box
@@ -163,7 +163,7 @@ export const VideoReferences = () => {
                   ? `Young people communicate through memes. That's why we ensure that all leading brands from banking to FMCG are able to speak fluent meme as well.`
                   : 'Mladí ľudia komunikujú memečkami. Preto zabezpečujeme, aby nimi mohli hovoriť aj všetky popredné značky od bankingu až po FMCG.'
               }
-              logo="/images/video_ref/mementum.png"
+              logo="/images/video_ref/mementum.svg"
             />
           </Box>
           <Box
@@ -178,7 +178,7 @@ export const VideoReferences = () => {
                   ? `A charitable organization that donates tens of thousands of EUR to Slovak hospitals every year. We are proud to be a part of it.`
                   : 'Charitatívna organizácia, ktorá každoročne odovzdá desiatky tisíc EUR slovenským nemocniciam. Hrdo sa nam tom spolupodieľame.'
               }
-              logo="/images/video_ref/rallyradosti.png"
+              logo="/images/video_ref/rallyradosti.svg"
             />
           </Box>
         </Flex>

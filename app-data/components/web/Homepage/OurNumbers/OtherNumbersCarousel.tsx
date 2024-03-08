@@ -138,6 +138,7 @@ export const OtherNumbersCarousel = ({
                 fontSize={{ base: rem(26), '3xl': rem(26) }}
                 lineHeight={rem(42)}
                 color={colors.primary}
+                textTransform="uppercase"
               >
                 {slide.title}
               </Text>

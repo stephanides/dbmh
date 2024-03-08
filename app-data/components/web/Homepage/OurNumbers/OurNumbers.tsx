@@ -88,7 +88,7 @@ export const OurNumbers = () => {
   const lang = i18n.language ?? 'en';
   return (
     <Box
-      pt={{ base: rem(104), lg: rem(160), '2xl': rem(200), '3xl': rem(292) }}
+      pt={{ base: rem(104), md: rem(140), '3xl': rem(292) }}
       pb={{ base: rem(60), lg: rem(120), '2xl': rem(180), '3xl': rem(227) }}
       px={{ base: rem(28), lg: rem(72) }}
     >
@@ -107,8 +107,8 @@ export const OurNumbers = () => {
       >
         <Box
           mt={{ base: rem(16), lg: 0 }}
-          width={{ base: rem(48), md: rem(96) }}
-          minWidth={{ base: rem(48), md: rem(96) }}
+          width={{ base: rem(48), lg: rem(96) }}
+          minWidth={{ base: rem(48), lg: rem(96) }}
         >
           <ArrowBig />
         </Box>
@@ -122,15 +122,15 @@ export const OurNumbers = () => {
           {t('ourNumbers:heading_2')}
         </Text>
       </Flex>
-      <Box mt={{ base: rem(100), md: rem(236) }}>
+      <Box mt={{ base: rem(100), md: rem(140), '3xl': rem(236) }}>
         <Flex flexDirection={{ base: 'column', '2xl': 'row' }}>
           <Box width={{ base: '100%', '2xl': '50%' }}>
-            <Flex mb={rem(32)} flexDir={{ base: 'column', sm: 'row' }}>
+            <Flex mb={rem(32)} flexDir={{ base: 'column', md: 'row' }}>
               <Box
-                width={{ base: '100%', sm: 'calc(50% - 16px)' }}
-                mr={{ base: 0, sm: rem(16) }}
+                width={{ base: '100%', md: 'calc(50% - 16px)' }}
+                mr={{ base: 0, md: rem(16) }}
                 height="auto"
-                mb={{ base: rem(32), sm: 0 }}
+                mb={{ base: rem(32), md: 0 }}
               >
                 <CounterCarousel
                   slides={SLIDES_1}
@@ -138,8 +138,8 @@ export const OurNumbers = () => {
                 />
               </Box>
               <Box
-                width={{ base: '100%', sm: 'calc(50% - 16px)' }}
-                ml={{ base: 0, sm: rem(16) }}
+                width={{ base: '100%', md: 'calc(50% - 16px)' }}
+                ml={{ base: 0, md: rem(16) }}
                 height="auto"
               >
                 <CounterCarousel
@@ -182,6 +182,7 @@ export const OurNumbers = () => {
                   fontSize={{ base: rem(26), '3xl': rem(26) }}
                   lineHeight={rem(42)}
                   color={colors.primary}
+                  textTransform="uppercase"
                 >
                   Rally Radosti
                 </Text>
