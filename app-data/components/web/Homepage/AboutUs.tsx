@@ -113,8 +113,8 @@ export const AboutUs = () => {
             <Box position="relative" mt={{ base: rem(100), md: rem(160) }}>
               <Box
                 position="absolute"
-                bottom="60px"
-                right={rem(-60)}
+                bottom="-80px"
+                right={rem(-120)}
                 display={{ base: 'none', lg: 'block' }}
               >
                 <Image
@@ -150,7 +150,7 @@ export const AboutUs = () => {
               <Box
                 position="absolute"
                 left="40%"
-                bottom="-120px"
+                bottom="-180px"
                 display={{ base: 'none', lg: 'block' }}
               >
                 <Image
@@ -165,7 +165,7 @@ export const AboutUs = () => {
               <Box
                 position="absolute"
                 right="0"
-                bottom="-120px"
+                bottom="-180px"
                 display={{ base: 'block', lg: 'none' }}
               >
                 <HeadingImage

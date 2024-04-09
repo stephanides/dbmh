@@ -13,7 +13,7 @@ function sendInfoMailNotification(data: any): Promise<void> {
       let transporter = nodemailer.createTransport({
         host: process.env.EMAIL_HOST,
         port: 587, // 587,
-        secure: false, // true, // ssl
+        secure: true, // true, // ssl
         auth: {
           user: process.env.EMAIL_LOGIN, // generated ethereal user
           pass: process.env.EMAIL_PASS, // generated ethereal password
@@ -50,6 +50,7 @@ const createContact: (root: any, args: any, ctx: any) => Promise<any> = async (
     // if (!human) {
     //   throw new ModError(400, 'You are robot!');
     // }
+    console.log('test', createContactInput);
 
     const contactData = new Contact(createContactInput);
 
@@ -62,7 +63,7 @@ const createContact: (root: any, args: any, ctx: any) => Promise<any> = async (
 
       // await sendClientMailNotification(createOrderInput);
     } catch (err) {
-      throw new ModError(500, 'Nastala chyba');
+      throw new ModError(500, err);
     }
 
     return result;

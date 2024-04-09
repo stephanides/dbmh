@@ -8,21 +8,26 @@ import { REFERENCE_ITEMS } from './referencesData';
 import { rem } from 'polished';
 import { FONT_FAMILY_FORMULA } from '../../../../shared/design';
 import styled from 'styled-components';
+import { useEffect, useRef, useState } from 'react';
 
 SwiperCore.use([Pagination]);
 
 export const References = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   return (
     <Element name="references">
       <Box width="100%">
         <Box width="100%" height="100%" position="relative">
           <Swiper
-            tag={SwiperWrapper}
+            tag={SwiperWrapperr}
+            className="references-swiper"
             slidesPerView={1}
             centeredSlides
+            onTransitionEnd={(swiper) => setActiveIndex(swiper.activeIndex)}
             speed={1200}
             direction="horizontal"
-            loop
+            autoplay={{ delay: 12000, disableOnInteraction: false }}
             pagination={{
               el: `.pagination-bullet-references-main`,
               clickable: true,
@@ -35,14 +40,23 @@ export const References = () => {
                 ),
             }}
           >
-            <SwiperSlide>
-              <ReferencesItem {...REFERENCE_ITEMS[0]} />
+            <SwiperSlide key="first">
+              <ReferencesItem
+                activeIndex={activeIndex}
+                {...REFERENCE_ITEMS[0]}
+              />
             </SwiperSlide>
-            <SwiperSlide>
-              <ReferencesItem {...REFERENCE_ITEMS[1]} />
+            <SwiperSlide key="second">
+              <ReferencesItem
+                activeIndex={activeIndex}
+                {...REFERENCE_ITEMS[1]}
+              />
             </SwiperSlide>
-            <SwiperSlide>
-              <ReferencesItem {...REFERENCE_ITEMS[2]} />
+            <SwiperSlide key="third">
+              <ReferencesItem
+                activeIndex={activeIndex}
+                {...REFERENCE_ITEMS[2]}
+              />
             </SwiperSlide>
           </Swiper>
           <PaginationWrapper
@@ -58,7 +72,7 @@ export const References = () => {
   );
 };
 
-const SwiperWrapper = styled.div`
+const SwiperWrapperr = styled.div`
   width: 100%;
   height: 100%;
   .swiper-wrapper {

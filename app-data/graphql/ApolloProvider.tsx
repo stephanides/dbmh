@@ -14,7 +14,7 @@ import { ReactNode } from 'react';
 
 const domain: string =
   process.env.NODE_ENV === 'production'
-    ? 'v1.daybymemediahouse.com'
+    ? 'daybymemediahouse.com'
     : 'localhost'; // change this to domain
 const protocol: string =
   process.env.NODE_ENV === 'production' ? 'https' : 'http'; // change this to https

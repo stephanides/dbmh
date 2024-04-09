@@ -1,6 +1,6 @@
 import { ReferencesItemType } from './ReferencesItem';
 
-export const REFERENCE_ITEMS: ReferencesItemType[] = [
+export const REFERENCE_ITEMS: any[] = [
   {
     images: [
       {
@@ -13,6 +13,20 @@ export const REFERENCE_ITEMS: ReferencesItemType[] = [
       },
       {
         src: '/images/references/SOC_3.jpg',
+        alt: 'Supercar Owners Circle 3',
+      },
+    ],
+    mobileImages: [
+      {
+        src: '/images/references/mobile/SOC_1.jpg',
+        alt: 'Supercar Owners Circle 1',
+      },
+      {
+        src: '/images/references/mobile/SOC_2.jpg',
+        alt: 'Supercar Owners Circle 2',
+      },
+      {
+        src: '/images/references/mobile/SOC_3.jpg',
         alt: 'Supercar Owners Circle 3',
       },
     ],
@@ -38,6 +52,20 @@ export const REFERENCE_ITEMS: ReferencesItemType[] = [
       },
       {
         src: '/images/references/TORSUS_3.jpg',
+        alt: 'Torsus 3',
+      },
+    ],
+    mobileImages: [
+      {
+        src: '/images/references/mobile/TORSUS_1.jpg',
+        alt: 'Torsus 1',
+      },
+      {
+        src: '/images/references/mobile/TORSUS_2.jpg',
+        alt: 'Torsus 2',
+      },
+      {
+        src: '/images/references/mobile/TORSUS_3.jpg',
         alt: 'Torsus 3',
       },
     ],
@@ -68,6 +96,20 @@ export const REFERENCE_ITEMS: ReferencesItemType[] = [
       },
       {
         src: '/images/references/TOMRA_3.jpg',
+        alt: 'Tomra 3',
+      },
+    ],
+    mobileImages: [
+      {
+        src: '/images/references/mobile/TOMRA_1.jpg',
+        alt: 'Tomra 1',
+      },
+      {
+        src: '/images/references/mobile/TOMRA_2.jpg',
+        alt: 'Tomra 2',
+      },
+      {
+        src: '/images/references/mobile/TOMRA_3.jpg',
         alt: 'Tomra 3',
       },
     ],

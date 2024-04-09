@@ -41,7 +41,7 @@ const SLIDES_1 = [
       sk: 'Tis+ fotiek na Daybyme.com',
     },
     text: {
-      en: `More than 600 thousand photos were uploaded by users to our lifestyle network Daybyme.com.`,
+      en: `More than 600 thousand photos have been uploaded by users to our lifestyle network Daybyme.com.`,
       sk: 'Na lifestyle sieť Daybyme.com bolo používateľmi nahratých viac ako 600 tisíc fotografií.',
     },
   },
@@ -209,7 +209,13 @@ export const OurNumbers = () => {
                   justifyContent="center"
                   pt={{ base: rem(100), '3xl': rem(148) }}
                 >
-                  <LogoBig />
+                  <Box width="50%" margin="0 auto">
+                    <img
+                      style={{ width: '100%' }}
+                      src="/images/rallyradosti_logo.png"
+                      alt="Rally radosti"
+                    />
+                  </Box>
                 </Flex>
               </Box>
             </Flex>

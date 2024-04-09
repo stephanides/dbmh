@@ -21,7 +21,7 @@ export const SiteLayout: FC<SiteLayoutProps> = (props) => {
   const {
     title = 'DBMH - Digital first marketing agency',
     currentUrl,
-    description = `The one you've been looking for.`,
+    description = `We handle everything from brand’s social media, coming up with fresh ideas, creating content and managing influencer campaigns that drive real results.`,
     previewImage,
     withContact = true,
   } = props;

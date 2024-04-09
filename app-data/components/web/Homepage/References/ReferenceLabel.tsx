@@ -11,6 +11,7 @@ export const ReferenceLabel = ({ title }: ReferenceLabelType) => {
     <Box
       backgroundColor="rgba(255,255,255,.1)"
       borderRadius={rem(4)}
+      mt={rem(12)}
       p={rem(8)}
     >
       <Text

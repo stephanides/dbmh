@@ -108,11 +108,11 @@ export const ContactForm = () => {
     };
     try {
       setIsLoading(true);
-      // await createContactMutate({
-      //   variables: {
-      //     createContactInput: dataToSend,
-      //   },
-      // });
+      await createContactMutate({
+        variables: {
+          createContactInput: dataToSend,
+        },
+      });
       setContactResult({
         isVisible: true,
         isSuccess: true,

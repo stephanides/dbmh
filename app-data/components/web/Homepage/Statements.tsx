@@ -158,9 +158,9 @@ export const Statements = () => {
         <Wrapper
           p={rem(40)}
           pb={rem(30)}
-          width="100%"
+          width={{ base: '95%', lg: '100%' }}
           position="relative"
-          height={{ base: '567px', lg: '823px' }}
+          height={{ base: '460px', lg: '823px' }}
         >
           <StatementItem
             isActive={activeSlide === 0}

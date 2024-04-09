@@ -66,7 +66,7 @@ function App({ Component, pageProps }: AppProps) {
           name="description"
           content={
             meta?.description ??
-            `The one you've been looking for.`
+            `We handle everything from brand’s social media, coming up with fresh ideas, creating content and managing influencer campaigns that drive real results.`
           }
         />
 
@@ -83,10 +83,9 @@ function App({ Component, pageProps }: AppProps) {
         />
       </Head>
       {/* Global Site Tag (gtag.js) - Google Analytics */}
-      {/* TODO: add GTM number */}
-      {/* <Script
+      <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=G-F6P7S4YP2P`}
+        src="https://www.googletagmanager.com/gtag/js?id=G-WQ3E7R3PH2"
       />
       <Script
         strategy="afterInteractive"
@@ -95,12 +94,12 @@ function App({ Component, pageProps }: AppProps) {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-F6P7S4YP2P', {
+            gtag('config', 'G-WQ3E7R3PH2', {
               page_path: window.location.pathname,
             });
           `,
         }}
-      /> */}
+      />
       <ApolloProvider>
         <OnlyClientProvider>
           {/* <GoogleReCaptchaProvider reCaptchaKey="6LeT1tolAAAAAJBL4QoWTDf7MXQQXtK1gQrPUzeK"> */}

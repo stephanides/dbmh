@@ -110,7 +110,7 @@ export const TrustedBy = () => {
 
       <Slider arrows={false} {...settings}>
         {PARTNERS.map((partner, i) => (
-          <Box>
+          <Box key={i}>
             <ItemImage src={partner.src} alt={partner.alt} />
           </Box>
         ))}

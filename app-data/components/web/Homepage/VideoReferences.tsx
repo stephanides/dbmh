@@ -1,4 +1,5 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Element } from 'react-scroll';
 import { FONT_FAMILY_FORMULA, colors } from '../../../shared/design';
 import { rem } from 'polished';
@@ -112,6 +113,7 @@ export const VideoReferences = () => {
         backgroundColor={colors.pageBackground}
         py={{ lg: rem(40), xl: rem(180) }}
         px={{ base: rem(28), lg: rem(72) }}
+        display={{ base: 'none', lg: 'block' }}
       >
         <Flex
           columnGap={rem(32)}
@@ -183,16 +185,109 @@ export const VideoReferences = () => {
           </Box>
         </Flex>
       </Box>
+      <Box
+        backgroundColor={colors.pageBackground}
+        py={{ lg: rem(40), xl: rem(180) }}
+        px={{ base: rem(28), lg: rem(72) }}
+        display={{ base: 'block', lg: 'none' }}
+      >
+        <Swiper
+          observer
+          tag={SwiperWrapper}
+          slidesPerView={1.3}
+          spaceBetween={20}
+          direction="horizontal"
+          speed={1200}
+          key={`services-${lang}`}
+        >
+          <SwiperSlide tag={StyledSwiperSlide}>
+            <Box
+              width={{ base: '100%', md: 'calc(50% - 16px)', xl: '25%' }}
+              position="relative"
+            >
+              <VideoReference
+                videoUrl="/video/faces.mp4"
+                title="Faces by Daybyme"
+                text={
+                  lang === 'en'
+                    ? `Microinfluencers were engaged in our campaigns long before they became a trend. That's also why we are the ones setting the direction for influencer marketing in Slovakia. For over 10 years already.`
+                    : 'Microinfluencerov sme zapájali do kampaní ešte predtým, ako sa z nich stal trend. Aj preto sme na Slovensku tí, ktorí udávajú smer influencer marketingu. Už 10 rokov.'
+                }
+                logo="/images/video_ref/faces.svg"
+              />
+            </Box>
+          </SwiperSlide>
+          <SwiperSlide tag={StyledSwiperSlide}>
+            <Box
+              top={{ base: 0, xl: rem(-50) }}
+              width={{ base: '100%', md: 'calc(50% - 16px)', xl: '25%' }}
+              position="relative"
+            >
+              <VideoReference
+                videoUrl="/video/ovm.mp4"
+                title="OV MEDIA"
+                text={
+                  lang === 'en'
+                    ? `OV MEDIA is a part of DBMH family with focus on creating engaging audiovisual content for clients from all over the world. From concept to full service production.`
+                    : 'OV MEDIA je produkčná agentúra so zameraním na vytváranie pútavého audiovizuálneho obsahu pre klientov z celého sveta. Od konceptu po full service produkciu.'
+                }
+                logo="/images/video_ref/ovmedia.svg"
+              />
+            </Box>
+          </SwiperSlide>
+          <SwiperSlide tag={StyledSwiperSlide}>
+            <Box
+              width={{ base: '100%', md: 'calc(50% - 16px)', xl: '25%' }}
+              position="relative"
+              top={{ base: 0, xl: rem(128) }}
+            >
+              <VideoReference
+                videoUrl="/video/mementum.mp4"
+                title="mementum"
+                text={
+                  lang === 'en'
+                    ? `Young people communicate through memes. That's why we ensure that all leading brands from banking to FMCG are able to speak fluent meme as well.`
+                    : 'Mladí ľudia komunikujú memečkami. Preto zabezpečujeme, aby nimi mohli hovoriť aj všetky popredné značky od bankingu až po FMCG.'
+                }
+                logo="/images/video_ref/mementum.svg"
+              />
+            </Box>
+          </SwiperSlide>
+          <SwiperSlide tag={StyledSwiperSlide}>
+            <Box
+              width={{ base: '100%', md: 'calc(50% - 16px)', xl: '25%' }}
+              position="relative"
+            >
+              <VideoReference
+                videoUrl="/video/rally.mp4"
+                title="Rally Radosti"
+                text={
+                  lang === 'en'
+                    ? `A charitable organization that donates tens of thousands of EUR to Slovak hospitals every year. We are proud to be a part of it.`
+                    : 'Charitatívna organizácia, ktorá každoročne odovzdá desiatky tisíc EUR slovenským nemocniciam. Hrdo sa nam tom spolupodieľame.'
+                }
+                logo="/images/video_ref/rallyradosti.svg"
+              />
+            </Box>
+          </SwiperSlide>
+        </Swiper>
+      </Box>
     </Element>
   );
 };
 
 const Shadow = styled(Box)`
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.85));
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 6%,
+    rgba(0, 0, 0, 0.44) 42%,
+    rgba(0, 0, 0, 0.76) 88%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
   transition: transform 0.5s ease-in-out;
   pointer-events: none;
   position: absolute;
-  bottom: 0;
+  bottom: -2px;
   height: 100%;
   width: 100%;
 `;
@@ -204,4 +299,13 @@ const StyledBox = styled(Box)`
       transform: translateY(100%);
     }
   }
+`;
+
+const SwiperWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+`;
+
+const StyledSwiperSlide = styled(SwiperSlide)`
+  height: auto !important;
 `;

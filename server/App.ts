@@ -37,7 +37,7 @@ const App: () => Promise<void> = async () => {
       express.json({ limit: '10mb' })
     );
     const server = new ApolloServer({
-      context: ({ req }) => authorization(req),
+      context: ({ req }) => req,
       typeDefs,
       resolvers,
       plugins: [
