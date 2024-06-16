@@ -160,15 +160,15 @@ a:active {
   transform: translateX(0);
 }
 
-.slick-slide > div {
-  margin: 0 10px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-}
-.slick-list {
-  margin: 0 -10px;
-}
+// .slick-slide > div {
+//   margin: 0 10px;
+//   height: 100px;
+//   display: flex;
+//   align-items: center;
+// }
+// .slick-list {
+//   margin: 0 -10px;
+// }
 
 span:has(> .animated-number) {
   display: inline-block;

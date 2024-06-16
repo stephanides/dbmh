@@ -65,7 +65,7 @@ const PARTNERS = [
 ];
 
 const settings = {
-  speed: 5000,
+  speed: 10000,
   autoplay: true,
   autoplaySpeed: 0,
   cssEase: 'linear',
@@ -96,6 +96,19 @@ export const TrustedBy = () => {
       borderRadius={rem(8)}
       py={{ base: rem(32), '3xl': rem(40) }}
       height={{ base: rem(240), sm: '330px' }}
+      sx={{
+        '.slick-slide': {
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          p: rem(16),
+        },
+        '.slick-track': {
+          display: 'flex',
+          alignItems: 'center',
+          columnGap: rem(20),
+        },
+      }}
     >
       <Text
         pl={rem(40)}
@@ -110,9 +123,9 @@ export const TrustedBy = () => {
 
       <Slider arrows={false} {...settings}>
         {PARTNERS.map((partner, i) => (
-          <Box key={i}>
+          <Flex key={i} display="flex !important">
             <ItemImage src={partner.src} alt={partner.alt} />
-          </Box>
+          </Flex>
         ))}
       </Slider>
     </Box>
@@ -121,12 +134,11 @@ export const TrustedBy = () => {
 
 const ItemImage = styled.img`
    {
-    width: 80px;
-    height: auto;
+    max-height: 60px;
     margin-left: 16px;
     margin-right: 16px;
     ${media.down.sm} {
-      width: 68px;
+      max-height: 50px;
     }
   }
 `;

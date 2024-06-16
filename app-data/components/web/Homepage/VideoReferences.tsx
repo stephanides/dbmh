@@ -6,12 +6,14 @@ import { rem } from 'polished';
 import { useRef, useState } from 'react';
 import styled from 'styled-components';
 import { useTranslation } from 'react-i18next';
+import { EXTERNAL_ROUTES } from '../../../shared/constants';
 
 type VideoReferenceProps = {
   logo: string;
   title: string;
   text: string;
   videoUrl: string;
+  url: string;
 };
 
 const VideoReference = ({
@@ -19,6 +21,7 @@ const VideoReference = ({
   title,
   text,
   videoUrl,
+  url,
 }: VideoReferenceProps) => {
   const videoRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
@@ -39,68 +42,70 @@ const VideoReference = ({
   };
 
   return (
-    <StyledBox
-      width="100%"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      borderRadius={rem(12)}
-      overflow="hidden"
-      cursor="pointer"
-      position="relative"
-    >
-      <Box position="absolute" top="0" height="100%" width="100%">
-        <Flex
-          mt={{ base: rem(40), '3xl': rem(60) }}
-          width="100%"
-          justifyContent="center"
-          transform={isActive ? 'translateY(-160px)' : 'translateY(0)'}
-          transition="transform 1s ease-out"
-        >
-          <img src={logo} alt={title} />
-        </Flex>
-        <Box
-          position="absolute"
-          bottom={0}
-          zIndex={1}
-          px={rem(30)}
-          transform={isActive ? 'translatex(-100%)' : 'translateX(0)'}
-          transition="transform 1s ease-out"
-        >
-          <Text
-            fontSize={{ base: rem(32), '3xl': rem(44) }}
-            lineHeight={{ base: rem(43), '3xl': rem(46) }}
-            fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
-            color="white"
-            textTransform="uppercase"
+    <a href={url} target="_blank">
+      <StyledBox
+        width="100%"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        borderRadius={rem(12)}
+        overflow="hidden"
+        cursor="pointer"
+        position="relative"
+      >
+        <Box position="absolute" top="0" height="100%" width="100%">
+          <Flex
+            mt={{ base: rem(40), '3xl': rem(60) }}
+            width="100%"
+            justifyContent="center"
+            transform={isActive ? 'translateY(-160px)' : 'translateY(0)'}
+            transition="transform 1s ease-out"
           >
-            {title}
-          </Text>
-          <Text
-            fontSize={{ base: rem(14), '2xl': rem(16) }}
-            lineHeight={rem(22)}
-            fontFamily={FONT_FAMILY_FORMULA.REGULAR}
-            color="white"
-            my={{ base: rem(32), '3xl': rem(72) }}
+            <img src={logo} alt={title} />
+          </Flex>
+          <Box
+            position="absolute"
+            bottom={0}
+            zIndex={1}
+            px={rem(30)}
+            transform={isActive ? 'translatex(-100%)' : 'translateX(0)'}
+            transition="transform 1s ease-out"
           >
-            {text}
-          </Text>
+            <Text
+              fontSize={{ base: rem(32), '3xl': rem(44) }}
+              lineHeight={{ base: rem(43), '3xl': rem(46) }}
+              fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
+              color="white"
+              textTransform="uppercase"
+            >
+              {title}
+            </Text>
+            <Text
+              fontSize={{ base: rem(14), '2xl': rem(16) }}
+              lineHeight={rem(22)}
+              fontFamily={FONT_FAMILY_FORMULA.REGULAR}
+              color="white"
+              my={{ base: rem(32), '3xl': rem(72) }}
+            >
+              {text}
+            </Text>
+          </Box>
         </Box>
-      </Box>
-      <Shadow />
-      <video
-        ref={videoRef}
-        autoPlay={false}
-        muted
-        loop
-        preload="metadata"
-        src={`${videoUrl}#t=0.001`}
-        style={{
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-        }}
-      />
-    </StyledBox>
+        <Shadow />
+        <video
+          ref={videoRef}
+          autoPlay={false}
+          muted
+          loop
+          preload="metadata"
+          src={`${videoUrl}#t=0.001`}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+          }}
+        />
+      </StyledBox>
+    </a>
   );
 };
 
@@ -134,6 +139,7 @@ export const VideoReferences = () => {
                   : 'Microinfluencerov sme zapájali do kampaní ešte predtým, ako sa z nich stal trend. Aj preto sme na Slovensku tí, ktorí udávajú smer influencer marketingu. Už 10 rokov.'
               }
               logo="/images/video_ref/faces.svg"
+              url={EXTERNAL_ROUTES.FACES}
             />
           </Box>
           <Box
@@ -150,6 +156,7 @@ export const VideoReferences = () => {
                   : 'OV MEDIA je produkčná agentúra so zameraním na vytváranie pútavého audiovizuálneho obsahu pre klientov z celého sveta. Od konceptu po full service produkciu.'
               }
               logo="/images/video_ref/ovmedia.svg"
+              url={EXTERNAL_ROUTES.OVM}
             />
           </Box>
           <Box
@@ -166,6 +173,7 @@ export const VideoReferences = () => {
                   : 'Mladí ľudia komunikujú memečkami. Preto zabezpečujeme, aby nimi mohli hovoriť aj všetky popredné značky od bankingu až po FMCG.'
               }
               logo="/images/video_ref/mementum.svg"
+              url={EXTERNAL_ROUTES.MEMENTUM}
             />
           </Box>
           <Box
@@ -181,6 +189,7 @@ export const VideoReferences = () => {
                   : 'Charitatívna organizácia, ktorá každoročne odovzdá desiatky tisíc EUR slovenským nemocniciam. Hrdo sa nam tom spolupodieľame.'
               }
               logo="/images/video_ref/rallyradosti.svg"
+              url={EXTERNAL_ROUTES.RALLY}
             />
           </Box>
         </Flex>
@@ -214,6 +223,7 @@ export const VideoReferences = () => {
                     : 'Microinfluencerov sme zapájali do kampaní ešte predtým, ako sa z nich stal trend. Aj preto sme na Slovensku tí, ktorí udávajú smer influencer marketingu. Už 10 rokov.'
                 }
                 logo="/images/video_ref/faces.svg"
+                url={EXTERNAL_ROUTES.FACES}
               />
             </Box>
           </SwiperSlide>
@@ -232,6 +242,7 @@ export const VideoReferences = () => {
                     : 'OV MEDIA je produkčná agentúra so zameraním na vytváranie pútavého audiovizuálneho obsahu pre klientov z celého sveta. Od konceptu po full service produkciu.'
                 }
                 logo="/images/video_ref/ovmedia.svg"
+                url={EXTERNAL_ROUTES.OVM}
               />
             </Box>
           </SwiperSlide>
@@ -250,6 +261,7 @@ export const VideoReferences = () => {
                     : 'Mladí ľudia komunikujú memečkami. Preto zabezpečujeme, aby nimi mohli hovoriť aj všetky popredné značky od bankingu až po FMCG.'
                 }
                 logo="/images/video_ref/mementum.svg"
+                url={EXTERNAL_ROUTES.MEMENTUM}
               />
             </Box>
           </SwiperSlide>
@@ -267,6 +279,7 @@ export const VideoReferences = () => {
                     : 'Charitatívna organizácia, ktorá každoročne odovzdá desiatky tisíc EUR slovenským nemocniciam. Hrdo sa nam tom spolupodieľame.'
                 }
                 logo="/images/video_ref/rallyradosti.svg"
+                url={EXTERNAL_ROUTES.RALLY}
               />
             </Box>
           </SwiperSlide>
