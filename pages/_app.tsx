@@ -20,7 +20,7 @@ import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
 
 import '../app-data/shared/styles/global.scss';
 
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import "yet-another-react-lightbox/styles.css";
 import { AppProps } from 'next/app';
 import { OnlyClientProvider } from '../app-data/shared/hooks/useOnlyClient';
 

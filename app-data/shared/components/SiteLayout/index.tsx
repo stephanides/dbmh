@@ -7,6 +7,7 @@ import { NavMenuContent } from './NavMenuContent';
 import { Box, useOutsideClick } from '@chakra-ui/react';
 import { Heading } from '../../../components/web/Homepage/Heading/Heading';
 import { rem } from 'polished';
+import { useRouter } from 'next/router';
 
 type SiteLayoutProps = {
   children: ReactNode;
@@ -25,6 +26,7 @@ export const SiteLayout: FC<SiteLayoutProps> = (props) => {
     previewImage,
     withContact = true,
   } = props;
+  const router = useRouter();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuContentRef = useRef(null);
@@ -35,6 +37,8 @@ export const SiteLayout: FC<SiteLayoutProps> = (props) => {
     ref: menuContentRef,
     handler: () => setIsMobileMenuOpen(false),
   });
+
+  const isHomePage = router.pathname === '/';
 
   return (
     <>
@@ -61,13 +65,17 @@ export const SiteLayout: FC<SiteLayoutProps> = (props) => {
       <div style={{ minHeight: '50vh' }}>
         <Navigation toggleMobile={toggleMobile} />
         <Box
-          mt={{
-            base: rem(102),
-            md: rem(122),
-            lg: rem(168),
-          }}
+          mt={
+            isHomePage
+              ? {
+                  base: rem(102),
+                  md: rem(122),
+                  lg: rem(168),
+                }
+              : 0
+          }
         >
-          <Heading />
+          {isHomePage && <Heading />}
           {props.children}
           <Footer />
         </Box>

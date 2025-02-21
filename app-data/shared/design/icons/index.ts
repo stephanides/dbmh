@@ -19,6 +19,18 @@ export * from './Error';
 export * from './Thanks';
 export * from './ErrorMessage';
 export * from './ScrollDown';
+export * from './SupercarHeading';
+export * from './OvMediaLogo';
+export * from './SocClient';
+export * from './Buggati';
+export * from './Rimac';
+export * from './Pagani';
+export * from './TimelinePoint';
+export * from './SocViews';
+export * from './PlayButton';
+export * from './Quote';
+export * from './SwipeRight';
+export * from './SocViewMobile';
 
 export type IconProps = {
   width?: string;

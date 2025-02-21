@@ -260,7 +260,7 @@ export const Footer = () => {
                     color="black"
                     mt={rem(32)}
                   >
-                    EST. 2012
+                    EST. 2014
                   </Text>
                 </Flex>
               </Box>

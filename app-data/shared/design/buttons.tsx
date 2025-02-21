@@ -1,38 +1,50 @@
 import Link from 'next/link';
-import { Button } from 'reactstrap';
+import { Button, ButtonProps as BaseButtonProps } from '@chakra-ui/react';
 import styled from 'styled-components';
 import { colors } from './colors';
 import { rem } from 'polished';
 import { FONT_FAMILY_FORMULA } from './typography';
 import { media } from './media';
+import { ReactNode } from 'react';
 
 type ButtonProps = {
-  size?: 'small' | 'big';
-};
+  children?: ReactNode;
+} & BaseButtonProps;
 
-export const PrimaryButton = styled(Button)<ButtonProps>`
-  padding: 10px 16px;
-  font-size: ${({ size }) => (size === 'big' ? '1.25rem' : '0.875rem')};
-  color: ${colors.textInverted};
-  background-color: ${colors.primary};
-  transition: background-color 0.3s ease-out;
-  border-radius: 25px;
-  border: none;
-  box-shadow: none !important;
-  font-weight: 400;
-  &:hover {
-    background-color: ${colors.primaryHover};
-  }
-  &:focus {
-    background-color: ${colors.primaryHover};
-  }
-  &:active {
-    background-color: ${colors.primaryHover} !important;
-  }
-  &:disabled {
-    background-color: #8dd2ff;
-  }
-`;
+export const PrimaryButton = ({ children, ...rest }: ButtonProps) => (
+  <Button
+    height={rem(48)}
+    px={rem(24)}
+    fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
+    fontSize={rem(16)}
+    textTransform="uppercase"
+    transition="all .3s ease-out"
+    borderRadius={rem(8)}
+    border="2px solid"
+    borderColor="white"
+    color="white"
+    background="transparent"
+    sx={{
+      _hover: {
+        background: 'transparent',
+
+        border: '2px solid',
+
+        path: {
+          fill: '#FBFB5E',
+        },
+      },
+    }}
+    _active={{ background: 'transparent' }}
+    _disabled={{
+      pointerEvents: 'none',
+      opacity: 0.5,
+    }}
+    {...rest}
+  >
+    {children}
+  </Button>
+);
 
 export const SecondaryButton = styled(Button)<ButtonProps>`
   padding: 0;

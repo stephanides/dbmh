@@ -59,7 +59,7 @@ export const Navigation = ({
         width="100%"
       >
         <Flex
-          background={colors.pageBackground}
+          background={scrolled ? colors.pageBackground : 'transparent'}
           transition="all 0.3s ease-out"
           height={{
             base: rem(100),
