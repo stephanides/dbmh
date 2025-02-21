@@ -31,7 +31,7 @@ export const Venture = () => {
       <Box position="relative">
         <Box display={{ base: 'none', lg: 'block' }}>
           <Image
-            src="/images/venture-map.svg"
+            src="/images/venture.jpg"
             width="0"
             height="0"
             sizes="100vw"
@@ -41,7 +41,7 @@ export const Venture = () => {
         </Box>
         <Box display={{ base: 'block', lg: 'none' }}>
           <Image
-            src="/images/venture-map-mobile.svg"
+            src="/images/venture-mobile.jpg"
             width="0"
             height="0"
             sizes="100vw"

@@ -33,18 +33,6 @@ export const Deliveries = ({
   setOpenGallery: (open: boolean) => void;
   setPhotoIndex: (index: number) => void;
 }) => {
-  const { ref: mainImageView, inView: mainImageInView } = useInView({
-    threshold: 0.1,
-    triggerOnce: true,
-  });
-  const { ref: sideImageView, inView: sideImageInView } = useInView({
-    threshold: 0.5,
-    triggerOnce: true,
-  });
-  const { ref: bottomImageView, inView: bottomImageInView } = useInView({
-    threshold: 0.5,
-    triggerOnce: true,
-  });
   const { ref: numbersImageView, inView: numbersImageInView } = useInView({
     threshold: 0.5,
     triggerOnce: true,
@@ -280,8 +268,8 @@ export const Deliveries = ({
             position="absolute"
             maxW={{ base: rem(260), sm: rem(400), xl: rem(570) }}
             width="100%"
-            right={{ base: 0, md: rem(80), xl: rem(200) }}
-            top={{ base: rem(60), sm: 0 }}
+            right={{ base: rem(-20), sm: 0, md: rem(80), xl: rem(200) }}
+            top={{ base: rem(20), sm: 0 }}
             opacity={numbersImageInView ? 1 : 0}
             transform={
               numbersImageInView ? 'translateY(0)' : 'translateY(60px)'
@@ -300,14 +288,8 @@ export const Deliveries = ({
         </Box>
         <Box mt={rem(80)}>
           <SectionTitle>Photos</SectionTitle>
-          <Box
-            ref={mainImageView}
-            mt={rem(64)}
-            display={{ base: 'none', md: 'block' }}
-          >
+          <Box mt={rem(64)} display={{ base: 'none', md: 'block' }}>
             <AnimatedImageWrapper
-              opacity={mainImageInView ? 1 : 0}
-              transform={mainImageInView ? 'translateY(0)' : 'translateY(60px)'}
               transition="all 1s ease-out"
               onClick={() => {
                 setPhotoIndex(10);
@@ -323,12 +305,11 @@ export const Deliveries = ({
                 alt="Var"
               />
             </AnimatedImageWrapper>
-            <Flex mt={rem(38)} columnGap={rem(32)} ref={sideImageView}>
+            <Flex
+              mt={{ base: rem(16), sm: rem(38) }}
+              columnGap={{ base: rem(16), sm: rem(32) }}
+            >
               <AnimatedImageWrapper
-                opacity={sideImageInView ? 1 : 0}
-                transform={
-                  sideImageInView ? 'translateX(0)' : 'translateX(-60px)'
-                }
                 transition="all 1s ease-out"
                 width="100%"
                 onClick={() => {
@@ -350,10 +331,6 @@ export const Deliveries = ({
                 />
               </AnimatedImageWrapper>
               <AnimatedImageWrapper
-                opacity={sideImageInView ? 1 : 0}
-                transform={
-                  sideImageInView ? 'translateX(0)' : 'translateX(60px)'
-                }
                 transition="all 1s ease-out"
                 transitionDelay="200ms"
                 width="100%"
@@ -376,10 +353,6 @@ export const Deliveries = ({
                 />
               </AnimatedImageWrapper>
               <AnimatedImageWrapper
-                opacity={sideImageInView ? 1 : 0}
-                transform={
-                  sideImageInView ? 'translateX(0)' : 'translateX(60px)'
-                }
                 transition="all 1s ease-out"
                 transitionDelay="200ms"
                 width="100%"
@@ -402,12 +375,11 @@ export const Deliveries = ({
                 />
               </AnimatedImageWrapper>
             </Flex>
-            <Flex mt={rem(38)} columnGap={rem(32)} ref={bottomImageView}>
+            <Flex
+              mt={{ base: rem(16), sm: rem(38) }}
+              columnGap={{ base: rem(16), sm: rem(32) }}
+            >
               <AnimatedImageWrapper
-                opacity={bottomImageInView ? 1 : 0}
-                transform={
-                  bottomImageInView ? 'translateX(0)' : 'translateX(-60px)'
-                }
                 transition="all 1s ease-out"
                 width="69%"
                 onClick={() => {
@@ -429,10 +401,6 @@ export const Deliveries = ({
                 />
               </AnimatedImageWrapper>
               <AnimatedImageWrapper
-                opacity={bottomImageInView ? 1 : 0}
-                transform={
-                  bottomImageInView ? 'translateX(0)' : 'translateX(60px)'
-                }
                 transition="all 1s ease-out"
                 transitionDelay="200ms"
                 width="33.34%"
@@ -457,13 +425,10 @@ export const Deliveries = ({
             </Flex>
           </Box>
           <Box
-            ref={mainImageView}
-            mt={rem(64)}
+            mt={{ base: rem(16), sm: rem(64) }}
             display={{ base: 'block', md: 'none' }}
           >
             <AnimatedImageWrapper
-              opacity={mainImageInView ? 1 : 0}
-              transform={mainImageInView ? 'translateY(0)' : 'translateY(60px)'}
               transition="all 1s ease-out"
               onClick={() => {
                 setPhotoIndex(10);
@@ -479,12 +444,11 @@ export const Deliveries = ({
                 alt="Var"
               />
             </AnimatedImageWrapper>
-            <Flex mt={rem(38)} columnGap={rem(32)} ref={sideImageView}>
+            <Flex
+              mt={{ base: rem(16), sm: rem(38) }}
+              columnGap={{ base: rem(16), sm: rem(32) }}
+            >
               <AnimatedImageWrapper
-                opacity={sideImageInView ? 1 : 0}
-                transform={
-                  sideImageInView ? 'translateX(0)' : 'translateX(-60px)'
-                }
                 transition="all 1s ease-out"
                 width="100%"
                 onClick={() => {
@@ -506,10 +470,6 @@ export const Deliveries = ({
                 />
               </AnimatedImageWrapper>
               <AnimatedImageWrapper
-                opacity={sideImageInView ? 1 : 0}
-                transform={
-                  sideImageInView ? 'translateX(0)' : 'translateX(60px)'
-                }
                 transition="all 1s ease-out"
                 transitionDelay="200ms"
                 width="100%"
@@ -534,16 +494,12 @@ export const Deliveries = ({
             </Flex>
 
             <AnimatedImageWrapper
-              opacity={bottomImageInView ? 1 : 0}
-              transform={
-                bottomImageInView ? 'translateX(0)' : 'translateX(-60px)'
-              }
               transition="all 1s ease-out"
               onClick={() => {
                 setPhotoIndex(27);
                 setOpenGallery(true);
               }}
-              mt={rem(32)}
+              mt={{ base: rem(16), sm: rem(32) }}
             >
               <Image
                 src="/images/soc/photos/7.jpg"
@@ -558,12 +514,11 @@ export const Deliveries = ({
                 alt="Var"
               />
             </AnimatedImageWrapper>
-            <Flex mt={rem(38)} columnGap={rem(32)} ref={bottomImageView}>
+            <Flex
+              mt={{ base: rem(16), sm: rem(38) }}
+              columnGap={{ base: rem(16), sm: rem(32) }}
+            >
               <AnimatedImageWrapper
-                opacity={sideImageInView ? 1 : 0}
-                transform={
-                  sideImageInView ? 'translateX(0)' : 'translateX(60px)'
-                }
                 transition="all 1s ease-out"
                 transitionDelay="200ms"
                 width="50%"
@@ -586,10 +541,6 @@ export const Deliveries = ({
                 />
               </AnimatedImageWrapper>
               <AnimatedImageWrapper
-                opacity={bottomImageInView ? 1 : 0}
-                transform={
-                  bottomImageInView ? 'translateX(0)' : 'translateX(60px)'
-                }
                 transition="all 1s ease-out"
                 transitionDelay="200ms"
                 width="50%"

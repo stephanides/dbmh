@@ -36,7 +36,7 @@ export const Soc = () => {
     });
   };
   return (
-    <Box>
+    <Box overflow="hidden">
       <Box
         width="100%"
         minH="100vh"
@@ -65,7 +65,7 @@ export const Soc = () => {
           Your browser does not support the video tag.
         </Box>
         <Flex flexDir="column">
-          <Box mt={rem(200)}>
+          <Box mt={{ base: rem(120), sm: rem(200) }}>
             <Link href="/">
               <PrimaryButton>GO BACK</PrimaryButton>
             </Link>
@@ -78,7 +78,7 @@ export const Soc = () => {
             </Box>
           </Box>
           <Box
-            width={{ base: '100%', sm: '400px', '3xl': '700px' }}
+            width={{ base: '80%', sm: '400px', '3xl': '700px' }}
             mt={rem(50)}
           >
             <SupercarHeading />
@@ -88,14 +88,14 @@ export const Soc = () => {
             mt={rem(46)}
             flexDir={{ base: 'column', lg: 'row' }}
             alignItems="flex-start"
-            rowGap={rem(20)}
+            rowGap={{ base: rem(14), sm: rem(20) }}
           >
             {['#Photoshooting', '#videoproduction', '#content'].map((label) => (
               <Box
                 textTransform="uppercase"
                 color="white"
                 fontFamily={FONT_FAMILY_FORMULA.MEDIUM}
-                fontSize={rem(16)}
+                fontSize={{ base: rem(14), sm: rem(16) }}
                 lineHeight={rem(22)}
                 py={rem(8)}
                 px={rem(12)}

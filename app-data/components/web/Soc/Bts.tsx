@@ -211,7 +211,7 @@ export const Bts = () => {
           >
             <Text
               color="white"
-              fontSize={{ base: rem(36), md: rem(44) }}
+              fontSize={{ base: rem(28), sm: rem(36), md: rem(44) }}
               textAlign="center"
               fontFamily={FONT_FAMILY_FORMULA.EXTRA_BOLD}
             >

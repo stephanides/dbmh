@@ -202,7 +202,11 @@ export const OverView = ({
             />
           </AnimatedImageWrapper>
         </Box>
-        <Flex mt={rem(38)} columnGap={rem(32)} ref={sideImageView}>
+        <Flex
+          mt={{ base: rem(16), sm: rem(38) }}
+          columnGap={{ base: rem(16), sm: rem(32) }}
+          ref={sideImageView}
+        >
           <AnimatedImageWrapper
             opacity={sideImageInView ? 1 : 0}
             transform={sideImageInView ? 'translateX(0)' : 'translateX(-60px)'}
