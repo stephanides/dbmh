@@ -1,6 +1,6 @@
-import { Box, Flex, Grid, Text } from '@chakra-ui/react';
+import { Box, Flex, Text } from '@chakra-ui/react';
 import { rem } from 'polished';
-import { AnimatedWrapper, CustomContainer } from '../../../shared/components';
+import { AnimatedWrapper } from '../../../shared/components';
 import { FONT_FAMILY_FORMULA } from '../../../shared/design';
 import dynamic from 'next/dynamic';
 import { useState } from 'react';
@@ -30,19 +30,24 @@ export const Bts = () => {
   const [open, setOpen] = useState(false);
   const [photoIndex, setPhotoIndex] = useState(0);
   return (
-    <CustomContainer>
-      <Box position="relative" py={rem(180)}>
+    <Flex justifyContent="center">
+      <Box
+        position="relative"
+        py={{ base: rem(100), lg: rem(180) }}
+        width="100%"
+        maxW={rem(1600)}
+      >
         <Box
           mx={{ base: rem(28), lg: rem(72) }}
           position="relative"
           minH={{ base: rem(800), lg: rem(600) }}
         >
           <AnimatedWrapper
-            width={{ base: rem(100), md: rem(180 * 0.8), lg: rem(120) }}
-            height={{ base: rem(140), md: rem(200 * 0.8), lg: rem(200) }}
+            width={{ base: rem(100), md: rem(180 * 0.8), lg: rem(320) }}
+            height={{ base: rem(140), md: rem(200 * 0.8), lg: rem(240) }}
             position="absolute"
-            top={rem(-20)}
-            left={{ base: '25%', lg: '30%' }}
+            top={rem(-40)}
+            left={{ base: '25%', lg: '20%' }}
             backgroundImage={`url(${images[0]})`}
             backgroundSize="cover"
             backgroundPosition="center"
@@ -87,17 +92,17 @@ export const Bts = () => {
               base: rem(200),
               sm: rem(260),
               md: rem(400 * 0.8),
-              lg: rem(300),
+              lg: rem(360),
             }}
             height={{
               base: rem(180),
               sm: rem(220),
               md: rem(300 * 0.8),
-              lg: rem(200),
+              lg: rem(240),
             }}
             position="absolute"
-            top={{ base: rem(100), md: rem(40) }}
-            right={{ base: '2%', lg: '12%' }}
+            top={{ base: rem(100), md: rem(-80) }}
+            right={{ base: '2%', lg: '8%' }}
             backgroundImage={`url(${images[2]})`}
             backgroundSize="cover"
             backgroundPosition="center"
@@ -113,8 +118,8 @@ export const Bts = () => {
             width={{ base: rem(120), md: rem(300 * 0.8), lg: rem(300) }}
             height={{ base: rem(140), md: rem(250 * 0.8), lg: rem(250) }}
             position="absolute"
-            top={rem(160)}
-            right="29%"
+            top={rem(170)}
+            right="20%"
             backgroundImage={`url(${images[3]})`}
             backgroundSize="cover"
             backgroundPosition="center"
@@ -142,7 +147,7 @@ export const Bts = () => {
             }}
             position="absolute"
             top={{ base: rem(-20), md: rem(200) }}
-            left={{ base: rem(-14), sm: '3%', lg: '10%' }}
+            left={{ base: rem(-14), sm: '3%', lg: '0' }}
             backgroundImage={`url(${images[4]})`}
             backgroundSize="cover"
             backgroundPosition="center"
@@ -168,8 +173,8 @@ export const Bts = () => {
               lg: rem(300),
             }}
             position="absolute"
-            top={{ base: rem(500), lg: rem(400) }}
-            right={{ base: rem(-20), sm: '3%', lg: '10%' }}
+            top={{ base: rem(500), lg: rem(440) }}
+            right={{ base: rem(-20), sm: '3%', lg: '5%' }}
             backgroundImage={`url(${images[5]})`}
             backgroundSize="cover"
             backgroundPosition="center"
@@ -181,7 +186,7 @@ export const Bts = () => {
           />
 
           <AnimatedWrapper
-            width={{ base: rem(160), sm: rem(200), md: rem(350), lg: rem(120) }}
+            width={{ base: rem(160), sm: rem(200), md: rem(350), lg: rem(300) }}
             height={{
               base: rem(200),
               sm: rem(320),
@@ -190,7 +195,7 @@ export const Bts = () => {
             }}
             position="absolute"
             top={{ base: rem(600), lg: rem(440) }}
-            left={{ base: rem(-20), sm: '2%', lg: '25%' }}
+            left={{ base: rem(-20), sm: '2%', lg: '12%' }}
             backgroundImage={`url(${images[6]})`}
             backgroundSize="cover"
             backgroundPosition="center"
@@ -226,6 +231,6 @@ export const Bts = () => {
           index={photoIndex}
         />
       </Box>
-    </CustomContainer>
+    </Flex>
   );
 };

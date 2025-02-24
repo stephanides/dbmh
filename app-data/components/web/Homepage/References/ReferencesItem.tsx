@@ -4,9 +4,14 @@ import SwiperCore, { Pagination, EffectFade } from 'swiper';
 import styled from 'styled-components';
 import { rem } from 'polished';
 import { useTranslation } from 'react-i18next';
-import { FONT_FAMILY_FORMULA, media } from '../../../../shared/design';
+import {
+  FONT_FAMILY_FORMULA,
+  media,
+  PrimaryButton,
+} from '../../../../shared/design';
 import { ReferenceLabel } from './ReferenceLabel';
 import { ReferencesImage } from './ReferencesImage';
+import Link from 'next/link';
 
 SwiperCore.use([Pagination, EffectFade]);
 
@@ -29,6 +34,7 @@ export type ReferencesItemType = {
     en: string;
   };
   activeIndex: number;
+  href?: string;
 };
 
 export const ReferencesItem = ({
@@ -38,6 +44,7 @@ export const ReferencesItem = ({
   labels,
   description,
   activeIndex,
+  href,
 }: ReferencesItemType) => {
   const { i18n } = useTranslation();
   const lang = i18n.language ?? 'en';
@@ -92,6 +99,13 @@ export const ReferencesItem = ({
           >
             {description[lang]}
           </Text>
+          {href && (
+            <Link href={href}>
+              <PrimaryButton height={rem(40)} fontSize={rem(12)} mt={rem(20)}>
+                Detail
+              </PrimaryButton>
+            </Link>
+          )}
         </Controls>
       </Box>
     </Wrapper>

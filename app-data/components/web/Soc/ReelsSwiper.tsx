@@ -123,13 +123,17 @@ export const ReelsSwiper = ({ reelsInView }: { reelsInView: boolean }) => {
               >
                 <video
                   ref={(el) => (videoRefs.current[index] = el)}
-                  width="100%"
-                  height="100%"
-                  style={{ objectFit: 'cover' }}
-                >
-                  <source src={videoSrc} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                  preload="metadata"
+                  autoPlay={false}
+                  muted
+                  loop
+                  src={`${videoSrc}#t=0.001`}
+                ></video>
               </Box>
             </Box>
           </SwiperSlide>

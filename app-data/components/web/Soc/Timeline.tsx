@@ -88,7 +88,7 @@ const TimelineItem = ({
 
 export const Timeline = () => {
   const { ref: contentView, inView: contentInView } = useInView({
-    threshold: 0.5,
+    threshold: 0.25,
     triggerOnce: true,
   });
   return (
@@ -138,7 +138,7 @@ export const Timeline = () => {
           <Swiper
             className="similar-swiper"
             spaceBetween={20}
-            slidesPerView={1.6}
+            slidesPerView={1.8}
             slidesOffsetBefore={28}
             slidesOffsetAfter={28}
             navigation={{
@@ -157,12 +157,12 @@ export const Timeline = () => {
                 slidesOffsetAfter: 72,
               },
               1440: {
-                slidesPerView: 3.3,
+                slidesPerView: 4.7,
                 slidesOffsetBefore: 72,
                 slidesOffsetAfter: 72,
               },
               1920: {
-                slidesPerView: 4.3,
+                slidesPerView: 4.7,
                 slidesOffsetBefore: 72,
                 slidesOffsetAfter: 72,
               },

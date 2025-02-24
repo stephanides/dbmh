@@ -37,6 +37,8 @@ export const Venture = () => {
             sizes="100vw"
             style={{ width: '100%', height: 'auto' }}
             alt="Venture map"
+            priority
+            loading="eager"
           />
         </Box>
         <Box display={{ base: 'block', lg: 'none' }}>
@@ -47,6 +49,8 @@ export const Venture = () => {
             sizes="100vw"
             style={{ width: '100%', height: 'auto' }}
             alt="Venture map"
+            priority
+            loading="eager"
           />
         </Box>
         <Box

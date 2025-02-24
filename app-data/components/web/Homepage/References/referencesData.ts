@@ -39,6 +39,7 @@ export const REFERENCE_ITEMS: any[] = [
       sk: 'Supercar Owners Circle je členská sieť poskytujúca jedinečné zážitky so superšportami po celom svete. V posledných rokoch dodávame audiovizuálny obsah ako ich hlavný produkčný tím.',
       en: 'The Supercar Owners Circle is a membership network delivering unique supercar experiences all over the world. Over the past few years we have been delivering audiovisual content as their main production team. ',
     },
+    href: '/soc',
   },
   {
     images: [

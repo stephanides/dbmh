@@ -185,7 +185,7 @@ export const Deliveries = ({
                 mb={rem(32)}
                 opacity={0.5}
               >
-                Words from the crew:
+                Words from client:
               </Text>
               <Text
                 fontFamily={FONT_FAMILY_FORMULA.MEDIUM}
@@ -198,23 +198,21 @@ export const Deliveries = ({
                   },
                 }}
               >
+                “A heartfelt thank you to the OV MEDIA team for the invaluable
+                support you have provided over the past six years. Your ability
+                to consistently go above and beyond expectations—not only in the
+                quality of photo and video coverage but also in the careful
+                coordination of our communications—has been instrumental in the
+                growth of our company.
                 <strong>
-                  "Collaborating with Paolo and the entire SOC team was a truly
-                  extraordinary passion project.
-                </strong>{' '}
-                Our mutual dedication to the world of supercars made every
-                challenge feel purposeful, even when the demands were intense.
-                There were countless sleepless nights and, quite literally, more
-                coffee than fuel in the cars we were chasing. Yet, the
-                opportunity to create content for some of the most prestigious
-                automotive brands in the world brought out the best in us.{' '}
-                <strong>
-                  The fast pace of the events didn’t just push us —it inspired a
-                  higher level of creativity and attention to detail.
+                  Thanks to your expertise, dedication, and passion, we’ve been
+                  able to maximise the impact of our events and reach a wider
+                  audience.
                 </strong>
-                In the end, watching the content resonate with SOC’s global
-                community of car collectors, sponsors, and members was the most
-                rewarding part of the journey.”
+                It has been a pleasure to collaborate with a team that not only
+                stands out for its professionalism but also perfectly
+                understands our vision. We are excited to continue this journey
+                together with you.”
               </Text>
               <Flex
                 alignItems="center"

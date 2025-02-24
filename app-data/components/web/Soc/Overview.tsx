@@ -35,7 +35,7 @@ export const OverView = ({
   setPhotoIndex: (index: number) => void;
 }) => {
   const { ref: spotView, inView: spotInView } = useInView({
-    threshold: 0.5,
+    threshold: 0.2,
     triggerOnce: true,
   });
   const { ref: projectOverviewView, inView: projectOverviewInView } = useInView(
